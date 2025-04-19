@@ -72,6 +72,7 @@ flutter:
     - assets/images/street_food_1.jpg
     - assets/images/aamchi_bites.png
     - assets/images/chal_bhidu.png
+    - assets/images/train.png
     - assets/mumbai_vendors_50.json
   #   - images/a_dot_ham.jpeg
 
@@ -86,17 +87,16 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
+  fonts:
+    - family: TiroDevanagariHindi
+      fonts:
+        - asset: assets/fonts/TiroDevanagariHindi-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
-  #   - family: Trajan Pro
-  #     fonts:
-  #       - asset: fonts/TrajanPro.ttf
-  #       - asset: fonts/TrajanPro_Bold.ttf
-  #         weight: 700
+    - family: Fredoka
+      fonts:
+        - asset: assets/fonts/Fredoka/static/Fredoka-Bold.ttf
+          weight: 700
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package

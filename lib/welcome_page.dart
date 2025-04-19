@@ -9,23 +9,25 @@ class WelcomePage extends StatelessWidget {
     final screenSize = MediaQuery.of(context).size;
 
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Stack(
         children: [
           // Zoomed-out background image
           SizedBox.expand(
             child: Transform.scale(
-              scale: 0.9, // Adjust this to control zoom-out level
+              scale: 1, // Adjust this to control zoom-out level
               child: Image.asset(
                 'assets/images/aamchi_bites.png',
-                fit: BoxFit.cover,
+                //fit: BoxFit.cover,
               ),
             ),
           ),
 
           // Button image with limited gesture area
           Positioned(
-            bottom: 50,
-            left: screenSize.width * 0.5 - 175, // Center the button (half screen - half image width)
+            top: 130,
+            bottom: 0,
+            left: screenSize.width * 0.5 - 115, // Center the button (half screen - half image width)
             child: GestureDetector(
               onTap: () {
                 Navigator.push(
