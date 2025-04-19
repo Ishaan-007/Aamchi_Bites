@@ -44,6 +44,9 @@ dependencies:
   google_generative_ai: ^0.4.7
   file_picker: ^10.1.2
   firebase_storage: ^12.4.5
+  geolocator: ^14.0.0
+  exif: ^3.3.0
+  geocoding: ^3.0.0
 
 dev_dependencies:
   flutter_test:

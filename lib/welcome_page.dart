@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:street_food_app/role_selector_page.dart';
 import 'sign_up_page.dart';
 
 class WelcomePage extends StatelessWidget {
@@ -32,7 +33,7 @@ class WelcomePage extends StatelessWidget {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => SignUpPage()),
+                  MaterialPageRoute(builder: (context) => RoleSelectorPage()),
                 );
               },
               child: Image.asset(
