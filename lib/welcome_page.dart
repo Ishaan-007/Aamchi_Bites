@@ -9,7 +9,7 @@ class WelcomePage extends StatelessWidget {
     final screenSize = MediaQuery.of(context).size;
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      //ackgroundColor: Colors.white,
       body: Stack(
         children: [
           // Zoomed-out background image
