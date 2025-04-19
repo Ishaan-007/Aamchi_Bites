@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "147379063492",
+    "firebase_url": "https://aamchibites-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "aamchibites",
+    "storage_bucket": "aamchibites.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:147379063492:android:a9c4eac13910b70ef85791",
+        "android_client_info": {
+          "package_name": "com.example.street_food_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBTCVcZN3a_biAC2FYYgAkXdS1fmXBw7o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
