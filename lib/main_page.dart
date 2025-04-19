@@ -3,7 +3,8 @@ import 'package:street_food_app/community_feedback_integration.dart';
 import 'package:street_food_app/flavour_passport_profile.dart';
 import 'package:street_food_app/food_category_card.dart';
 import 'package:street_food_app/food_place_screen.dart';
-import 'package:street_food_app/optimized_route_map.dart';// Assuming this exists
+import 'package:street_food_app/optimized_route_map.dart';
+import 'package:street_food_app/vendor_sign_up_page.dart';// Assuming this exists
 
 class HomePage extends StatelessWidget {
   final String email;
@@ -179,7 +180,7 @@ class HomePage extends StatelessWidget {
               IconButton(
                 icon: const Icon(Icons.add_circle_outline),
                 onPressed: () {
-                  // TODO: Add new vendor navigation
+                  Navigator.push(context, MaterialPageRoute(builder: (_) => VendorSignUpPage()));
                 },
               ),
               IconButton(

@@ -24,7 +24,7 @@ class _OSMOptimizedRouteMapState extends State<OSMOptimizedRouteMap> {
     LatLng(19.0259, 72.8545),
     LatLng(19.0555, 72.8304),
   ];
-
+  List<String> vendorNames = ["Anand Stall, Vile Parle","Sardar Pav Bhaji, Tardeo","Cannon Pav Bhaji, Fort","Elco, Bandra","Bademiya, Colaba","Muchhad Paanwala","Gulshan-e-Iran, Crawford","Noor Mohammadi, Bhendi Bazaar","Ram Ashraya, Matunga","Nandu's Dosa Stall, Bandra"];
   List<Polyline> routePolylines = [];
 
   @override
@@ -93,7 +93,7 @@ class _OSMOptimizedRouteMapState extends State<OSMOptimizedRouteMap> {
               children: [
                 Icon(Icons.location_pin, color: Colors.red, size: 30),
                 Text(
-                  "Vendor ${entry.key + 1}",
+                  vendorNames[entry.key],
                   style: TextStyle(fontSize: 12, color: Colors.black),
                 ),
               ],
