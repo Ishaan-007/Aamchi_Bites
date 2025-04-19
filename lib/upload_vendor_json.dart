@@ -9,7 +9,7 @@ class UploadVendorJsonToFirestore extends StatelessWidget {
   Future<void> uploadJsonToFirestore() async {
     try {
       // Load the JSON file from assets
-      String jsonString = await rootBundle.loadString('assets/mumbai_vendors_50.json');
+      String jsonString = await rootBundle.loadString('assets/mumbai_vendors_50_updated.json');
       Map<String, dynamic> data = json.decode(jsonString);
 
       // Loop through each vendor

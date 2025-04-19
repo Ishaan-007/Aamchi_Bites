@@ -16,6 +16,13 @@ class _FeedbackFormState extends State<FeedbackForm> {
   String description = '';
   int rating = 1;
   bool recommend = false;
+  int cleanliness = 5;
+  String ingredientQuality = 'Fresh';
+  String waterSafety = 'Safe';
+  double hygieneScore = 5.0;
+
+  final List<String> ingredientOptions = ['Fresh', 'Stale', 'Frozen'];
+  final List<String> waterSafetyOptions = ['Safe', 'Unsafe'];
 
   @override
   Widget build(BuildContext context) {
@@ -54,6 +61,44 @@ class _FeedbackFormState extends State<FeedbackForm> {
                 value: recommend,
                 onChanged: (v) => setState(() => recommend = v),
               ),
+              TextFormField(
+                decoration: InputDecoration(labelText: "Cleanliness (0-10)"),
+                keyboardType: TextInputType.number,
+                initialValue: cleanliness.toString(),
+                validator: (v) {
+                  final val = int.tryParse(v!);
+                  if (val == null || val < 0 || val > 10) return "Enter a value between 0 and 10";
+                  return null;
+                },
+                onSaved: (v) => cleanliness = int.parse(v!),
+              ),
+              DropdownButtonFormField<String>(
+                value: ingredientQuality,
+                items: ingredientOptions
+                    .map((e) => DropdownMenuItem(child: Text(e), value: e))
+                    .toList(),
+                onChanged: (v) => setState(() => ingredientQuality = v!),
+                decoration: InputDecoration(labelText: "Ingredient Quality"),
+              ),
+              DropdownButtonFormField<String>(
+                value: waterSafety,
+                items: waterSafetyOptions
+                    .map((e) => DropdownMenuItem(child: Text(e), value: e))
+                    .toList(),
+                onChanged: (v) => setState(() => waterSafety = v!),
+                decoration: InputDecoration(labelText: "Water Safety"),
+              ),
+              TextFormField(
+                decoration: InputDecoration(labelText: "Hygiene Score (0-10)"),
+                keyboardType: TextInputType.numberWithOptions(decimal: true),
+                initialValue: hygieneScore.toString(),
+                validator: (v) {
+                  final val = double.tryParse(v!);
+                  if (val == null || val < 0 || val > 10) return "Enter a score between 0 and 10";
+                  return null;
+                },
+                onSaved: (v) => hygieneScore = double.parse(v!),
+              ),
               SizedBox(height: 20),
               ElevatedButton(
                 child: Text("Submit Review"),
@@ -72,6 +117,10 @@ class _FeedbackFormState extends State<FeedbackForm> {
                       'rating': rating,
                       'recommend': recommend,
                       'timestamp': Timestamp.now(),
+                      'cleanliness': cleanliness,
+                      'ingredient_quality': ingredientQuality,
+                      'water_safety': waterSafety,
+                      'hygiene_score': hygieneScore,
                     });
 
                     Navigator.pop(context);

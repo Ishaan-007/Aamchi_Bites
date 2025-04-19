@@ -1,0 +1,3088 @@
+{
+  "vendor_1": {
+    "name": "The Frankie House Thane",
+    "city": "Thane",
+    "location": "282 Thane Street, Mumbai",
+    "contact": "+91-7823099727",
+    "timings": "9:00 AM - 9:45 PM",
+    "rating": 4.3,
+    "recentReviewCount": 0,
+    "menu": [
+      {
+        "name": "Chicken Roll",
+        "price": 80
+      },
+      {
+        "name": "Masala Dosa",
+        "price": 60
+      },
+      {
+        "name": "Vada Pav",
+        "price": 20
+      },
+      {
+        "name": "Veg Frankie",
+        "price": 45
+      }
+    ],
+    "reviews": {
+      "8e41a055-b54b-4980-999f-609d827982f4": {
+        "username": "Priya",
+        "title": "Too spicy",
+        "description": "Amazing taste and quick service.",
+        "rating": 4,
+        "recommend": false,
+        "timestamp": "2025-04-12T07:02:12.805744",
+        "cleanliness": 3,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Unsafe",
+        "hygiene_score": 5.2
+      }
+    },
+    "avg_hygiene_score": 8.0,
+    "status": "green"
+  },
+  "vendor_2": {
+    "name": "Bombay Sandwich Thane",
+    "city": "Thane",
+    "location": "291 Thane Street, Mumbai",
+    "contact": "+91-7185454581",
+    "timings": "9:00 AM - 9:45 PM",
+    "rating": 4.9,
+    "recentReviewCount": 4,
+    "menu": [
+      {
+        "name": "Bhel Puri",
+        "price": 25
+      },
+      {
+        "name": "Samosa",
+        "price": 15
+      },
+      {
+        "name": "Masala Dosa",
+        "price": 60
+      },
+      {
+        "name": "Vada Pav",
+        "price": 20
+      }
+    ],
+    "reviews": {
+      "775847a0-25e2-4e54-91cc-b6c549d63b3a": {
+        "username": "Sneha",
+        "title": "Okayish",
+        "description": "Not worth the price.",
+        "rating": 5,
+        "recommend": false,
+        "timestamp": "2025-04-10T07:02:12.805935",
+        "cleanliness": 8,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Safe",
+        "hygiene_score": 9.0
+      },
+      "5d1e9a03-8fac-424d-8be2-ef9647483aa1": {
+        "username": "Tina",
+        "title": "Not good",
+        "description": "Too spicy for me.",
+        "rating": 3,
+        "recommend": false,
+        "timestamp": "2025-04-09T07:02:12.806150",
+        "cleanliness": 7,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Unsafe",
+        "hygiene_score": 7.2
+      }
+    },
+    "avg_hygiene_score": 6.3,
+    "status": "orange"
+  },
+  "vendor_3": {
+    "name": "Street Curry Borivali",
+    "city": "Borivali",
+    "location": "27 Borivali Street, Mumbai",
+    "contact": "+91-8270328870",
+    "timings": "9:00 AM - 9:45 PM",
+    "rating": 4.9,
+    "recentReviewCount": 4,
+    "menu": [
+      {
+        "name": "Masala Dosa",
+        "price": 60
+      },
+      {
+        "name": "Chicken Roll",
+        "price": 80
+      },
+      {
+        "name": "Samosa",
+        "price": 15
+      },
+      {
+        "name": "Bhel Puri",
+        "price": 25
+      }
+    ],
+    "reviews": {
+      "d2323e4b-9a70-439b-b446-a2f3646c6153": {
+        "username": "Priya",
+        "title": "Loved it",
+        "description": "Could be better.",
+        "rating": 5,
+        "recommend": false,
+        "timestamp": "2025-04-09T07:02:12.806500",
+        "cleanliness": 9,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Safe",
+        "hygiene_score": 9.5
+      },
+      "a0d9e858-1b19-4052-ae31-e6da1f9705b9": {
+        "username": "Sneha",
+        "title": "Delicious!",
+        "description": "Amazing taste and quick service.",
+        "rating": 4,
+        "recommend": false,
+        "timestamp": "2025-04-10T07:02:12.806749",
+        "cleanliness": 3,
+        "ingredient_quality": "Unknown",
+        "water_safety": "Unsafe",
+        "hygiene_score": 4.0
+      }
+    },
+    "avg_hygiene_score": 5.0,
+    "status": "orange"
+  },
+  "vendor_4": {
+    "name": "Mumbai Bites Borivali",
+    "city": "Borivali",
+    "location": "262 Borivali Street, Mumbai",
+    "contact": "+91-9954756032",
+    "timings": "9:00 AM - 9:45 PM",
+    "rating": 4.5,
+    "recentReviewCount": 2,
+    "menu": [
+      {
+        "name": "Samosa",
+        "price": 15
+      },
+      {
+        "name": "Veg Frankie",
+        "price": 45
+      },
+      {
+        "name": "Chicken Roll",
+        "price": 80
+      },
+      {
+        "name": "Masala Dosa",
+        "price": 60
+      }
+    ],
+    "reviews": {
+      "4ba6c90f-ec5d-4f0d-bfe7-8bee00eaa03e": {
+        "username": "Sameer",
+        "title": "Loved it",
+        "description": "Highly recommended!",
+        "rating": 5,
+        "recommend": true,
+        "timestamp": "2025-04-19T07:02:12.806881",
+        "cleanliness": 5,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Unsafe",
+        "hygiene_score": 6.2
+      },
+      "33f04e64-c8a5-4cac-b49f-9c7be5d6c663": {
+        "username": "Tina",
+        "title": "Okayish",
+        "description": "Bit oily but tasty.",
+        "rating": 2,
+        "recommend": false,
+        "timestamp": "2025-04-19T07:02:12.806932",
+        "cleanliness": 9,
+        "ingredient_quality": "Unknown",
+        "water_safety": "Safe",
+        "hygiene_score": 8.2
+      },
+      "52b6032b-88af-43cd-8bf6-633b2c7e70d7": {
+        "username": "Vikram",
+        "title": "Loved it",
+        "description": "Not worth the price.",
+        "rating": 3,
+        "recommend": false,
+        "timestamp": "2025-04-15T07:02:12.807037",
+        "cleanliness": 9,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Unsafe",
+        "hygiene_score": 8.2
+      }
+    },
+    "avg_hygiene_score": 8.8,
+    "status": "green"
+  },
+  "vendor_5": {
+    "name": "Dosa Delights Mulund",
+    "city": "Mulund",
+    "location": "237 Mulund Street, Mumbai",
+    "contact": "+91-7989798586",
+    "timings": "9:00 AM - 9:45 PM",
+    "rating": 3.8,
+    "recentReviewCount": 3,
+    "menu": [
+      {
+        "name": "Bhel Puri",
+        "price": 25
+      },
+      {
+        "name": "Masala Dosa",
+        "price": 60
+      },
+      {
+        "name": "Vada Pav",
+        "price": 20
+      },
+      {
+        "name": "Pav Bhaji",
+        "price": 50
+      }
+    ],
+    "reviews": {
+      "88dad1cb-0134-4e60-8360-fa57b3d6a676": {
+        "username": "Ravi",
+        "title": "Too spicy",
+        "description": "Could be better.",
+        "rating": 3,
+        "recommend": false,
+        "timestamp": "2025-04-11T07:02:12.807321",
+        "cleanliness": 8,
+        "ingredient_quality": "Unknown",
+        "water_safety": "Unsafe",
+        "hygiene_score": 6.5
+      },
+      "1d772463-4c41-4683-87bb-0ac96a8e629b": {
+        "username": "Priya",
+        "title": "Delicious!",
+        "description": "Could be better.",
+        "rating": 5,
+        "recommend": true,
+        "timestamp": "2025-04-19T07:02:12.807424",
+        "cleanliness": 6,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Safe",
+        "hygiene_score": 8.0
+      }
+    },
+    "avg_hygiene_score": 4.7,
+    "status": "red"
+  },
+  "vendor_6": {
+    "name": "Shiv Vada Pav Andheri",
+    "city": "Andheri",
+    "location": "204 Andheri Street, Mumbai",
+    "contact": "+91-7894568715",
+    "timings": "9:00 AM - 9:45 PM",
+    "rating": 4.4,
+    "recentReviewCount": 1,
+    "menu": [
+      {
+        "name": "Pav Bhaji",
+        "price": 50
+      },
+      {
+        "name": "Chicken Roll",
+        "price": 80
+      },
+      {
+        "name": "Bhel Puri",
+        "price": 25
+      },
+      {
+        "name": "Veg Frankie",
+        "price": 45
+      }
+    ],
+    "reviews": {
+      "d11cfcd7-aed8-4269-b6bc-1721e7dc0163": {
+        "username": "Sneha",
+        "title": "Loved it",
+        "description": "Bit oily but tasty.",
+        "rating": 1,
+        "recommend": true,
+        "timestamp": "2025-04-12T07:02:12.807507",
+        "cleanliness": 3,
+        "ingredient_quality": "Unknown",
+        "water_safety": "Unsafe",
+        "hygiene_score": 4.0
+      },
+      "6cfc613a-dcd1-4166-a220-083f1ce35b74": {
+        "username": "Neha",
+        "title": "Not good",
+        "description": "Highly recommended!",
+        "rating": 4,
+        "recommend": false,
+        "timestamp": "2025-04-10T07:02:12.807738",
+        "cleanliness": 4,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Safe",
+        "hygiene_score": 7.0
+      }
+    },
+    "avg_hygiene_score": 4.8,
+    "status": "red"
+  },
+  "vendor_7": {
+    "name": "Shiv Vada Pav Ghatkopar",
+    "city": "Ghatkopar",
+    "location": "90 Ghatkopar Street, Mumbai",
+    "contact": "+91-8031935689",
+    "timings": "9:00 AM - 9:45 PM",
+    "rating": 4.8,
+    "recentReviewCount": 0,
+    "menu": [
+      {
+        "name": "Masala Dosa",
+        "price": 60
+      },
+      {
+        "name": "Samosa",
+        "price": 15
+      },
+      {
+        "name": "Pani Puri",
+        "price": 30
+      },
+      {
+        "name": "Veg Frankie",
+        "price": 45
+      }
+    ],
+    "reviews": {
+      "6d965f0c-46df-45a9-ad36-6b9417870809": {
+        "username": "Amit",
+        "title": "Delicious!",
+        "description": "Could be better.",
+        "rating": 4,
+        "recommend": true,
+        "timestamp": "2025-04-18T07:02:12.807834",
+        "cleanliness": 6,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Unsafe",
+        "hygiene_score": 6.8
+      },
+      "16d8c6bb-e346-4f69-945e-e52c7e22dd56": {
+        "username": "Anjali",
+        "title": "Loved it",
+        "description": "Highly recommended!",
+        "rating": 2,
+        "recommend": false,
+        "timestamp": "2025-04-12T07:02:12.807899",
+        "cleanliness": 2,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Unsafe",
+        "hygiene_score": 4.8
+      },
+      "65eb0ec8-c3cb-4acf-8cf1-3806ccf4216f": {
+        "username": "Sameer",
+        "title": "Not good",
+        "description": "Amazing taste and quick service.",
+        "rating": 3,
+        "recommend": true,
+        "timestamp": "2025-04-10T07:02:12.808056",
+        "cleanliness": 3,
+        "ingredient_quality": "Unknown",
+        "water_safety": "Unsafe",
+        "hygiene_score": 4.0
+      },
+      "0534491d-4149-4f2b-a1b1-73190e896e95": {
+        "username": "Tina",
+        "title": "Okayish",
+        "description": "Highly recommended!",
+        "rating": 3,
+        "recommend": false,
+        "timestamp": "2025-04-14T07:02:12.808088",
+        "cleanliness": 9,
+        "ingredient_quality": "Unknown",
+        "water_safety": "Unsafe",
+        "hygiene_score": 7.0
+      }
+    },
+    "avg_hygiene_score": 7.9,
+    "status": "orange"
+  },
+  "vendor_8": {
+    "name": "Dosa Delights Dadar",
+    "city": "Dadar",
+    "location": "25 Dadar Street, Mumbai",
+    "contact": "+91-8052118324",
+    "timings": "9:00 AM - 9:45 PM",
+    "rating": 4.4,
+    "recentReviewCount": 3,
+    "menu": [
+      {
+        "name": "Pani Puri",
+        "price": 30
+      },
+      {
+        "name": "Samosa",
+        "price": 15
+      },
+      {
+        "name": "Masala Dosa",
+        "price": 60
+      },
+      {
+        "name": "Chicken Roll",
+        "price": 80
+      }
+    ],
+    "reviews": {
+      "739ffa22-7d07-470c-8cdb-2fc04dadf43a": {
+        "username": "Amit",
+        "title": "Delicious!",
+        "description": "Not worth the price.",
+        "rating": 1,
+        "recommend": true,
+        "timestamp": "2025-04-12T07:02:12.808140",
+        "cleanliness": 9,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Safe",
+        "hygiene_score": 9.5
+      }
+    },
+    "avg_hygiene_score": 9.3,
+    "status": "green"
+  },
+  "vendor_9": {
+    "name": "Dosa Delights Borivali",
+    "city": "Borivali",
+    "location": "162 Borivali Street, Mumbai",
+    "contact": "+91-8199471018",
+    "timings": "9:00 AM - 9:45 PM",
+    "rating": 4.2,
+    "recentReviewCount": 5,
+    "menu": [
+      {
+        "name": "Chicken Roll",
+        "price": 80
+      },
+      {
+        "name": "Pav Bhaji",
+        "price": 50
+      },
+      {
+        "name": "Masala Dosa",
+        "price": 60
+      },
+      {
+        "name": "Bhel Puri",
+        "price": 25
+      }
+    ],
+    "reviews": {
+      "c59ae74f-9c88-4ff1-bee5-92928c65ad81": {
+        "username": "Sameer",
+        "title": "Will visit again",
+        "description": "Bit oily but tasty.",
+        "rating": 1,
+        "recommend": false,
+        "timestamp": "2025-04-16T07:02:12.808180",
+        "cleanliness": 2,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Safe",
+        "hygiene_score": 6.0
+      },
+      "9c618f23-3984-4861-9264-d6bfddcf43ea": {
+        "username": "Neha",
+        "title": "Delicious!",
+        "description": "Amazing taste and quick service.",
+        "rating": 2,
+        "recommend": true,
+        "timestamp": "2025-04-13T07:02:12.808193",
+        "cleanliness": 2,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Unsafe",
+        "hygiene_score": 4.8
+      }
+    },
+    "avg_hygiene_score": 9.4,
+    "status": "green"
+  },
+  "vendor_10": {
+    "name": "Spicy Tandoor Andheri",
+    "city": "Andheri",
+    "location": "229 Andheri Street, Mumbai",
+    "contact": "+91-9063285558",
+    "timings": "9:00 AM - 9:45 PM",
+    "rating": 3.9,
+    "recentReviewCount": 4,
+    "menu": [
+      {
+        "name": "Samosa",
+        "price": 15
+      },
+      {
+        "name": "Pani Puri",
+        "price": 30
+      },
+      {
+        "name": "Chicken Roll",
+        "price": 80
+      },
+      {
+        "name": "Masala Dosa",
+        "price": 60
+      }
+    ],
+    "reviews": {
+      "1b0ff377-2536-48bf-9f77-492a341267b2": {
+        "username": "Amit",
+        "title": "Too spicy",
+        "description": "Bit oily but tasty.",
+        "rating": 5,
+        "recommend": true,
+        "timestamp": "2025-04-15T07:02:12.808226",
+        "cleanliness": 1,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Unsafe",
+        "hygiene_score": 4.2
+      },
+      "abd94bc9-7bef-462e-b12f-0df13778ebcf": {
+        "username": "Sameer",
+        "title": "Too spicy",
+        "description": "Too spicy for me.",
+        "rating": 3,
+        "recommend": false,
+        "timestamp": "2025-04-15T07:02:12.808242",
+        "cleanliness": 1,
+        "ingredient_quality": "Unknown",
+        "water_safety": "Unsafe",
+        "hygiene_score": 3.0
+      },
+      "dda4f9a8-4abf-460e-a6a2-72a828619876": {
+        "username": "Amit",
+        "title": "Okayish",
+        "description": "Highly recommended!",
+        "rating": 4,
+        "recommend": true,
+        "timestamp": "2025-04-15T07:02:12.808254",
+        "cleanliness": 3,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Unsafe",
+        "hygiene_score": 5.2
+      }
+    },
+    "avg_hygiene_score": 7.9,
+    "status": "orange"
+  },
+  "vendor_11": {
+    "name": "Bombay Sandwich Thane",
+    "city": "Thane",
+    "location": "300 Thane Street, Mumbai",
+    "contact": "+91-7432838101",
+    "timings": "9:00 AM - 9:45 PM",
+    "rating": 3.8,
+    "recentReviewCount": 1,
+    "menu": [
+      {
+        "name": "Veg Frankie",
+        "price": 45
+      },
+      {
+        "name": "Bhel Puri",
+        "price": 25
+      },
+      {
+        "name": "Vada Pav",
+        "price": 20
+      },
+      {
+        "name": "Masala Dosa",
+        "price": 60
+      }
+    ],
+    "reviews": {
+      "1b0d0f94-c92b-474b-a375-8296cdc65de0": {
+        "username": "Vikram",
+        "title": "Will visit again",
+        "description": "Too spicy for me.",
+        "rating": 2,
+        "recommend": false,
+        "timestamp": "2025-04-11T07:02:12.808285",
+        "cleanliness": 4,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Safe",
+        "hygiene_score": 7.0
+      },
+      "d87a6191-4cda-4a26-9cb7-46a06dc3c382": {
+        "username": "Anjali",
+        "title": "Too spicy",
+        "description": "Too spicy for me.",
+        "rating": 4,
+        "recommend": false,
+        "timestamp": "2025-04-10T07:02:12.808326",
+        "cleanliness": 7,
+        "ingredient_quality": "Unknown",
+        "water_safety": "Safe",
+        "hygiene_score": 7.2
+      },
+      "3d045508-26c3-48d2-aea9-99f8d78b5b6f": {
+        "username": "Rohit",
+        "title": "Will visit again",
+        "description": "Highly recommended!",
+        "rating": 2,
+        "recommend": false,
+        "timestamp": "2025-04-09T07:02:12.808344",
+        "cleanliness": 9,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Unsafe",
+        "hygiene_score": 8.2
+      },
+      "fe2a7a7d-1636-41df-94cd-3adcdcbc1696": {
+        "username": "Amit",
+        "title": "Not good",
+        "description": "Too spicy for me.",
+        "rating": 4,
+        "recommend": false,
+        "timestamp": "2025-04-10T07:02:12.808356",
+        "cleanliness": 4,
+        "ingredient_quality": "Unknown",
+        "water_safety": "Unsafe",
+        "hygiene_score": 4.5
+      }
+    },
+    "avg_hygiene_score": 5.1,
+    "status": "orange"
+  },
+  "vendor_12": {
+    "name": "Mumbai Bites Thane",
+    "city": "Thane",
+    "location": "245 Thane Street, Mumbai",
+    "contact": "+91-9328757461",
+    "timings": "9:00 AM - 9:45 PM",
+    "rating": 4.8,
+    "recentReviewCount": 2,
+    "menu": [
+      {
+        "name": "Chicken Roll",
+        "price": 80
+      },
+      {
+        "name": "Masala Dosa",
+        "price": 60
+      },
+      {
+        "name": "Pani Puri",
+        "price": 30
+      },
+      {
+        "name": "Pav Bhaji",
+        "price": 50
+      }
+    ],
+    "reviews": {
+      "c41096a7-f1b8-4c31-8263-808d5605eb73": {
+        "username": "Rohit",
+        "title": "Too spicy",
+        "description": "Could be better.",
+        "rating": 2,
+        "recommend": false,
+        "timestamp": "2025-04-18T07:02:12.808390",
+        "cleanliness": 4,
+        "ingredient_quality": "Unknown",
+        "water_safety": "Unsafe",
+        "hygiene_score": 4.5
+      },
+      "2ba0b837-8820-440a-8609-779db4ed8e98": {
+        "username": "Priya",
+        "title": "Not good",
+        "description": "Bit oily but tasty.",
+        "rating": 2,
+        "recommend": true,
+        "timestamp": "2025-04-17T07:02:12.808401",
+        "cleanliness": 6,
+        "ingredient_quality": "Unknown",
+        "water_safety": "Unsafe",
+        "hygiene_score": 5.5
+      }
+    },
+    "avg_hygiene_score": 6.7,
+    "status": "orange"
+  },
+  "vendor_13": {
+    "name": "The Frankie House Kurla",
+    "city": "Kurla",
+    "location": "62 Kurla Street, Mumbai",
+    "contact": "+91-7682197667",
+    "timings": "9:00 AM - 9:45 PM",
+    "rating": 4.7,
+    "recentReviewCount": 5,
+    "menu": [
+      {
+        "name": "Pav Bhaji",
+        "price": 50
+      },
+      {
+        "name": "Chicken Roll",
+        "price": 80
+      },
+      {
+        "name": "Vada Pav",
+        "price": 20
+      },
+      {
+        "name": "Pani Puri",
+        "price": 30
+      }
+    ],
+    "reviews": {
+      "f0978b83-61d0-4fac-83ea-93e175cf93df": {
+        "username": "Priya",
+        "title": "Too spicy",
+        "description": "Not worth the price.",
+        "rating": 3,
+        "recommend": false,
+        "timestamp": "2025-04-10T07:02:12.808441",
+        "cleanliness": 1,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Unsafe",
+        "hygiene_score": 4.2
+      },
+      "deb6e41d-34a4-452d-98ff-e0072273bbb4": {
+        "username": "Vikram",
+        "title": "Loved it",
+        "description": "Amazing taste and quick service.",
+        "rating": 1,
+        "recommend": false,
+        "timestamp": "2025-04-14T07:02:12.808457",
+        "cleanliness": 1,
+        "ingredient_quality": "Unknown",
+        "water_safety": "Unsafe",
+        "hygiene_score": 3.0
+      },
+      "580ab56a-f4bf-4fa5-ab3d-d79297e7bb63": {
+        "username": "Vikram",
+        "title": "Too spicy",
+        "description": "Too spicy for me.",
+        "rating": 1,
+        "recommend": true,
+        "timestamp": "2025-04-18T07:02:12.808473",
+        "cleanliness": 10,
+        "ingredient_quality": "Unknown",
+        "water_safety": "Safe",
+        "hygiene_score": 8.8
+      },
+      "69887ea4-cf21-4990-9a91-f442dd65daa5": {
+        "username": "Sneha",
+        "title": "Loved it",
+        "description": "Could be better.",
+        "rating": 4,
+        "recommend": false,
+        "timestamp": "2025-04-13T07:02:12.808493",
+        "cleanliness": 6,
+        "ingredient_quality": "Unknown",
+        "water_safety": "Unsafe",
+        "hygiene_score": 5.5
+      }
+    },
+    "avg_hygiene_score": 7.3,
+    "status": "orange"
+  },
+  "vendor_14": {
+    "name": "Mumbai Bites Thane",
+    "city": "Thane",
+    "location": "178 Thane Street, Mumbai",
+    "contact": "+91-9492978215",
+    "timings": "9:00 AM - 9:45 PM",
+    "rating": 3.9,
+    "recentReviewCount": 2,
+    "menu": [
+      {
+        "name": "Chicken Roll",
+        "price": 80
+      },
+      {
+        "name": "Pani Puri",
+        "price": 30
+      },
+      {
+        "name": "Veg Frankie",
+        "price": 45
+      },
+      {
+        "name": "Vada Pav",
+        "price": 20
+      }
+    ],
+    "reviews": {
+      "225f53cf-3960-4055-93be-3c25413f7d37": {
+        "username": "Amit",
+        "title": "Loved it",
+        "description": "Too spicy for me.",
+        "rating": 5,
+        "recommend": false,
+        "timestamp": "2025-04-14T07:02:12.808527",
+        "cleanliness": 3,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Unsafe",
+        "hygiene_score": 5.2
+      }
+    },
+    "avg_hygiene_score": 5.0,
+    "status": "orange"
+  },
+  "vendor_15": {
+    "name": "Dosa Delights Mulund",
+    "city": "Mulund",
+    "location": "111 Mulund Street, Mumbai",
+    "contact": "+91-9742501308",
+    "timings": "9:00 AM - 9:45 PM",
+    "rating": 4.9,
+    "recentReviewCount": 2,
+    "menu": [
+      {
+        "name": "Masala Dosa",
+        "price": 60
+      },
+      {
+        "name": "Bhel Puri",
+        "price": 25
+      },
+      {
+        "name": "Pav Bhaji",
+        "price": 50
+      },
+      {
+        "name": "Vada Pav",
+        "price": 20
+      }
+    ],
+    "reviews": {
+      "c72961be-9d41-43e1-9994-4ccf384c3e5a": {
+        "username": "Vikram",
+        "title": "Will visit again",
+        "description": "Amazing taste and quick service.",
+        "rating": 4,
+        "recommend": true,
+        "timestamp": "2025-04-09T07:02:12.808565",
+        "cleanliness": 10,
+        "ingredient_quality": "Unknown",
+        "water_safety": "Safe",
+        "hygiene_score": 8.8
+      },
+      "62231aaf-4461-4977-b7d9-f98a856acdfa": {
+        "username": "Amit",
+        "title": "Not good",
+        "description": "Amazing taste and quick service.",
+        "rating": 2,
+        "recommend": true,
+        "timestamp": "2025-04-11T07:02:12.808580",
+        "cleanliness": 1,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Unsafe",
+        "hygiene_score": 4.2
+      },
+      "64038146-bcca-444a-9cbc-29a287778af5": {
+        "username": "Anjali",
+        "title": "Loved it",
+        "description": "Too spicy for me.",
+        "rating": 4,
+        "recommend": false,
+        "timestamp": "2025-04-12T07:02:12.808592",
+        "cleanliness": 6,
+        "ingredient_quality": "Unknown",
+        "water_safety": "Unsafe",
+        "hygiene_score": 5.5
+      }
+    },
+    "avg_hygiene_score": 7.3,
+    "status": "orange"
+  },
+  "vendor_16": {
+    "name": "Mumbai Bites Vile Parle",
+    "city": "Vile Parle",
+    "location": "134 Vile Parle Street, Mumbai",
+    "contact": "+91-9412116624",
+    "timings": "9:00 AM - 9:45 PM",
+    "rating": 4.4,
+    "recentReviewCount": 0,
+    "menu": [
+      {
+        "name": "Veg Frankie",
+        "price": 45
+      },
+      {
+        "name": "Samosa",
+        "price": 15
+      },
+      {
+        "name": "Pav Bhaji",
+        "price": 50
+      },
+      {
+        "name": "Vada Pav",
+        "price": 20
+      }
+    ],
+    "reviews": {
+      "47cf42ad-91c9-4c42-96f3-10e323d9751c": {
+        "username": "Rohit",
+        "title": "Loved it",
+        "description": "Amazing taste and quick service.",
+        "rating": 1,
+        "recommend": false,
+        "timestamp": "2025-04-18T07:02:12.808627",
+        "cleanliness": 6,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Safe",
+        "hygiene_score": 8.0
+      },
+      "d24eb737-8ab4-4b1c-951d-66ec79bc85c3": {
+        "username": "Anjali",
+        "title": "Not good",
+        "description": "Too spicy for me.",
+        "rating": 2,
+        "recommend": false,
+        "timestamp": "2025-04-17T07:02:12.808666",
+        "cleanliness": 8,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Unsafe",
+        "hygiene_score": 7.8
+      }
+    },
+    "avg_hygiene_score": 8.2,
+    "status": "green"
+  },
+  "vendor_17": {
+    "name": "Rolls Mania Mulund",
+    "city": "Mulund",
+    "location": "180 Mulund Street, Mumbai",
+    "contact": "+91-7683125194",
+    "timings": "9:00 AM - 9:45 PM",
+    "rating": 4.5,
+    "recentReviewCount": 5,
+    "menu": [
+      {
+        "name": "Vada Pav",
+        "price": 20
+      },
+      {
+        "name": "Chicken Roll",
+        "price": 80
+      },
+      {
+        "name": "Pani Puri",
+        "price": 30
+      },
+      {
+        "name": "Bhel Puri",
+        "price": 25
+      }
+    ],
+    "reviews": {
+      "da8795ff-d59d-4fb0-9286-0e7324e87407": {
+        "username": "Anjali",
+        "title": "Will visit again",
+        "description": "Amazing taste and quick service.",
+        "rating": 1,
+        "recommend": true,
+        "timestamp": "2025-04-15T07:02:12.808719",
+        "cleanliness": 6,
+        "ingredient_quality": "Unknown",
+        "water_safety": "Unsafe",
+        "hygiene_score": 5.5
+      },
+      "45c5f753-ce8b-4477-833b-c1d0795ce186": {
+        "username": "Sameer",
+        "title": "Okayish",
+        "description": "Highly recommended!",
+        "rating": 3,
+        "recommend": false,
+        "timestamp": "2025-04-14T07:02:12.808733",
+        "cleanliness": 2,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Unsafe",
+        "hygiene_score": 4.8
+      },
+      "2b11dc22-0d57-4101-9499-c6645dd0ad92": {
+        "username": "Ravi",
+        "title": "Okayish",
+        "description": "Highly recommended!",
+        "rating": 1,
+        "recommend": true,
+        "timestamp": "2025-04-17T07:02:12.808746",
+        "cleanliness": 5,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Safe",
+        "hygiene_score": 7.5
+      }
+    },
+    "avg_hygiene_score": 5.1,
+    "status": "orange"
+  },
+  "vendor_18": {
+    "name": "Street Curry Thane",
+    "city": "Thane",
+    "location": "290 Thane Street, Mumbai",
+    "contact": "+91-8319555574",
+    "timings": "9:00 AM - 9:45 PM",
+    "rating": 3.9,
+    "recentReviewCount": 0,
+    "menu": [
+      {
+        "name": "Pav Bhaji",
+        "price": 50
+      },
+      {
+        "name": "Bhel Puri",
+        "price": 25
+      },
+      {
+        "name": "Vada Pav",
+        "price": 20
+      },
+      {
+        "name": "Pani Puri",
+        "price": 30
+      }
+    ],
+    "reviews": {
+      "e9771d8a-de0d-4b8e-bd38-51c1a10ad3f0": {
+        "username": "Sneha",
+        "title": "Will visit again",
+        "description": "Amazing taste and quick service.",
+        "rating": 3,
+        "recommend": true,
+        "timestamp": "2025-04-10T07:02:12.808794",
+        "cleanliness": 1,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Unsafe",
+        "hygiene_score": 4.2
+      },
+      "e9764ddb-8947-419e-8af9-38b833b66ada": {
+        "username": "Tina",
+        "title": "Delicious!",
+        "description": "Bit oily but tasty.",
+        "rating": 5,
+        "recommend": true,
+        "timestamp": "2025-04-12T07:02:12.808808",
+        "cleanliness": 5,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Unsafe",
+        "hygiene_score": 6.2
+      },
+      "842ce5e3-7fdb-4877-a7a3-5beb8bc6bf81": {
+        "username": "Anjali",
+        "title": "Okayish",
+        "description": "Highly recommended!",
+        "rating": 4,
+        "recommend": false,
+        "timestamp": "2025-04-15T07:02:12.808818",
+        "cleanliness": 1,
+        "ingredient_quality": "Unknown",
+        "water_safety": "Unsafe",
+        "hygiene_score": 3.0
+      },
+      "a7fd882c-38d5-4cf3-b2bd-5781b0f75afa": {
+        "username": "Ravi",
+        "title": "Too spicy",
+        "description": "Highly recommended!",
+        "rating": 5,
+        "recommend": true,
+        "timestamp": "2025-04-13T07:02:12.808829",
+        "cleanliness": 6,
+        "ingredient_quality": "Unknown",
+        "water_safety": "Unsafe",
+        "hygiene_score": 5.5
+      }
+    },
+    "avg_hygiene_score": 8.1,
+    "status": "green"
+  },
+  "vendor_19": {
+    "name": "Street Curry Chembur",
+    "city": "Chembur",
+    "location": "136 Chembur Street, Mumbai",
+    "contact": "+91-7271763815",
+    "timings": "9:00 AM - 9:45 PM",
+    "rating": 3.7,
+    "recentReviewCount": 1,
+    "menu": [
+      {
+        "name": "Chicken Roll",
+        "price": 80
+      },
+      {
+        "name": "Masala Dosa",
+        "price": 60
+      },
+      {
+        "name": "Bhel Puri",
+        "price": 25
+      },
+      {
+        "name": "Veg Frankie",
+        "price": 45
+      }
+    ],
+    "reviews": {
+      "a9ffbd81-a5cc-40a2-99e6-e4b9b042cfd0": {
+        "username": "Ravi",
+        "title": "Will visit again",
+        "description": "Amazing taste and quick service.",
+        "rating": 1,
+        "recommend": true,
+        "timestamp": "2025-04-13T07:02:12.808863",
+        "cleanliness": 7,
+        "ingredient_quality": "Unknown",
+        "water_safety": "Safe",
+        "hygiene_score": 7.2
+      }
+    },
+    "avg_hygiene_score": 7.5,
+    "status": "orange"
+  },
+  "vendor_20": {
+    "name": "Chaat Junction Thane",
+    "city": "Thane",
+    "location": "147 Thane Street, Mumbai",
+    "contact": "+91-8777109106",
+    "timings": "9:00 AM - 9:45 PM",
+    "rating": 3.5,
+    "recentReviewCount": 3,
+    "menu": [
+      {
+        "name": "Vada Pav",
+        "price": 20
+      },
+      {
+        "name": "Pav Bhaji",
+        "price": 50
+      },
+      {
+        "name": "Chicken Roll",
+        "price": 80
+      },
+      {
+        "name": "Veg Frankie",
+        "price": 45
+      }
+    ],
+    "reviews": {
+      "9b4d6518-8259-4777-b09c-cd4e8bba3842": {
+        "username": "Tina",
+        "title": "Not good",
+        "description": "Not worth the price.",
+        "rating": 4,
+        "recommend": false,
+        "timestamp": "2025-04-11T07:02:12.808902",
+        "cleanliness": 1,
+        "ingredient_quality": "Unknown",
+        "water_safety": "Safe",
+        "hygiene_score": 4.2
+      }
+    },
+    "avg_hygiene_score": 6.4,
+    "status": "orange"
+  },
+  "vendor_21": {
+    "name": "Street Curry Ghatkopar",
+    "city": "Ghatkopar",
+    "location": "63 Ghatkopar Street, Mumbai",
+    "contact": "+91-9537661831",
+    "timings": "9:00 AM - 9:45 PM",
+    "rating": 4.5,
+    "recentReviewCount": 4,
+    "menu": [
+      {
+        "name": "Pav Bhaji",
+        "price": 50
+      },
+      {
+        "name": "Samosa",
+        "price": 15
+      },
+      {
+        "name": "Chicken Roll",
+        "price": 80
+      },
+      {
+        "name": "Veg Frankie",
+        "price": 45
+      }
+    ],
+    "reviews": {
+      "fcb59290-3cab-4d80-bb95-77627e41e2dc": {
+        "username": "Tina",
+        "title": "Delicious!",
+        "description": "Could be better.",
+        "rating": 2,
+        "recommend": false,
+        "timestamp": "2025-04-17T07:02:12.808944",
+        "cleanliness": 2,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Unsafe",
+        "hygiene_score": 4.8
+      },
+      "89e304e0-78af-4b8c-aa35-a50fb87c4055": {
+        "username": "Vikram",
+        "title": "Not good",
+        "description": "Highly recommended!",
+        "rating": 2,
+        "recommend": true,
+        "timestamp": "2025-04-15T07:02:12.808957",
+        "cleanliness": 3,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Unsafe",
+        "hygiene_score": 5.2
+      },
+      "3c60b934-96f1-4dbb-9151-ab180f410069": {
+        "username": "Sameer",
+        "title": "Loved it",
+        "description": "Highly recommended!",
+        "rating": 5,
+        "recommend": false,
+        "timestamp": "2025-04-11T07:02:12.808968",
+        "cleanliness": 8,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Safe",
+        "hygiene_score": 9.0
+      }
+    },
+    "avg_hygiene_score": 5.0,
+    "status": "orange"
+  },
+  "vendor_22": {
+    "name": "Bombay Sandwich Chembur",
+    "city": "Chembur",
+    "location": "58 Chembur Street, Mumbai",
+    "contact": "+91-8354163504",
+    "timings": "9:00 AM - 9:45 PM",
+    "rating": 3.9,
+    "recentReviewCount": 4,
+    "menu": [
+      {
+        "name": "Vada Pav",
+        "price": 20
+      },
+      {
+        "name": "Samosa",
+        "price": 15
+      },
+      {
+        "name": "Bhel Puri",
+        "price": 25
+      },
+      {
+        "name": "Pani Puri",
+        "price": 30
+      }
+    ],
+    "reviews": {
+      "9815199b-df09-43c2-a040-ef5e75133a52": {
+        "username": "Anjali",
+        "title": "Delicious!",
+        "description": "Amazing taste and quick service.",
+        "rating": 4,
+        "recommend": false,
+        "timestamp": "2025-04-15T07:02:12.809009",
+        "cleanliness": 2,
+        "ingredient_quality": "Unknown",
+        "water_safety": "Unsafe",
+        "hygiene_score": 3.5
+      },
+      "ae6de035-1de4-4aef-846b-ccba6938c7b2": {
+        "username": "Amit",
+        "title": "Loved it",
+        "description": "Not worth the price.",
+        "rating": 5,
+        "recommend": true,
+        "timestamp": "2025-04-11T07:02:12.809021",
+        "cleanliness": 7,
+        "ingredient_quality": "Unknown",
+        "water_safety": "Safe",
+        "hygiene_score": 7.2
+      },
+      "c7494690-0be1-40d9-997f-70d281967f79": {
+        "username": "Tina",
+        "title": "Not good",
+        "description": "Not worth the price.",
+        "rating": 1,
+        "recommend": true,
+        "timestamp": "2025-04-13T07:02:12.809033",
+        "cleanliness": 8,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Safe",
+        "hygiene_score": 9.0
+      }
+    },
+    "avg_hygiene_score": 5.6,
+    "status": "orange"
+  },
+  "vendor_23": {
+    "name": "Bombay Sandwich Mulund",
+    "city": "Mulund",
+    "location": "284 Mulund Street, Mumbai",
+    "contact": "+91-8112644654",
+    "timings": "9:00 AM - 9:45 PM",
+    "rating": 4.8,
+    "recentReviewCount": 3,
+    "menu": [
+      {
+        "name": "Pav Bhaji",
+        "price": 50
+      },
+      {
+        "name": "Veg Frankie",
+        "price": 45
+      },
+      {
+        "name": "Pani Puri",
+        "price": 30
+      },
+      {
+        "name": "Masala Dosa",
+        "price": 60
+      }
+    ],
+    "reviews": {
+      "af1a43be-5b2d-4fc0-9b65-c5502e149781": {
+        "username": "Rohit",
+        "title": "Loved it",
+        "description": "Highly recommended!",
+        "rating": 3,
+        "recommend": false,
+        "timestamp": "2025-04-18T07:02:12.809089",
+        "cleanliness": 10,
+        "ingredient_quality": "Unknown",
+        "water_safety": "Safe",
+        "hygiene_score": 8.8
+      },
+      "01b635a5-1e34-4875-8920-16a214e9fc34": {
+        "username": "Tina",
+        "title": "Okayish",
+        "description": "Not worth the price.",
+        "rating": 2,
+        "recommend": false,
+        "timestamp": "2025-04-19T07:02:12.809105",
+        "cleanliness": 9,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Safe",
+        "hygiene_score": 9.5
+      },
+      "90f35f66-3891-4e35-8c29-76242d111e13": {
+        "username": "Ravi",
+        "title": "Okayish",
+        "description": "Could be better.",
+        "rating": 1,
+        "recommend": false,
+        "timestamp": "2025-04-09T07:02:12.809116",
+        "cleanliness": 4,
+        "ingredient_quality": "Unknown",
+        "water_safety": "Safe",
+        "hygiene_score": 5.8
+      }
+    },
+    "avg_hygiene_score": 8.7,
+    "status": "green"
+  },
+  "vendor_24": {
+    "name": "Rolls Mania Dadar",
+    "city": "Dadar",
+    "location": "49 Dadar Street, Mumbai",
+    "contact": "+91-9991335973",
+    "timings": "9:00 AM - 9:45 PM",
+    "rating": 4.6,
+    "recentReviewCount": 3,
+    "menu": [
+      {
+        "name": "Samosa",
+        "price": 15
+      },
+      {
+        "name": "Pav Bhaji",
+        "price": 50
+      },
+      {
+        "name": "Vada Pav",
+        "price": 20
+      },
+      {
+        "name": "Veg Frankie",
+        "price": 45
+      }
+    ],
+    "reviews": {
+      "ea767979-8164-49fa-b264-1be88d7ed65b": {
+        "username": "Vikram",
+        "title": "Okayish",
+        "description": "Bit oily but tasty.",
+        "rating": 3,
+        "recommend": false,
+        "timestamp": "2025-04-15T07:02:12.809154",
+        "cleanliness": 5,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Safe",
+        "hygiene_score": 7.5
+      },
+      "839cc0b9-58c0-489b-a6d3-7dd3a87cdc76": {
+        "username": "Neha",
+        "title": "Too spicy",
+        "description": "Not worth the price.",
+        "rating": 1,
+        "recommend": true,
+        "timestamp": "2025-04-11T07:02:12.809181",
+        "cleanliness": 6,
+        "ingredient_quality": "Unknown",
+        "water_safety": "Unsafe",
+        "hygiene_score": 5.5
+      }
+    },
+    "avg_hygiene_score": 5.4,
+    "status": "orange"
+  },
+  "vendor_25": {
+    "name": "Biryani Adda Vile Parle",
+    "city": "Vile Parle",
+    "location": "166 Vile Parle Street, Mumbai",
+    "contact": "+91-8350868311",
+    "timings": "9:00 AM - 9:45 PM",
+    "rating": 3.8,
+    "recentReviewCount": 5,
+    "menu": [
+      {
+        "name": "Pav Bhaji",
+        "price": 50
+      },
+      {
+        "name": "Bhel Puri",
+        "price": 25
+      },
+      {
+        "name": "Chicken Roll",
+        "price": 80
+      },
+      {
+        "name": "Pani Puri",
+        "price": 30
+      }
+    ],
+    "reviews": {
+      "82ecb4e6-768b-41dd-8e3e-e09a866e5d31": {
+        "username": "Amit",
+        "title": "Will visit again",
+        "description": "Too spicy for me.",
+        "rating": 1,
+        "recommend": true,
+        "timestamp": "2025-04-16T07:02:12.809215",
+        "cleanliness": 8,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Safe",
+        "hygiene_score": 9.0
+      },
+      "123348de-f956-4ce0-82cf-e35173392b2e": {
+        "username": "Rohit",
+        "title": "Will visit again",
+        "description": "Too spicy for me.",
+        "rating": 2,
+        "recommend": false,
+        "timestamp": "2025-04-09T07:02:12.809231",
+        "cleanliness": 7,
+        "ingredient_quality": "Unknown",
+        "water_safety": "Safe",
+        "hygiene_score": 7.2
+      },
+      "bb34c919-1a2e-4bc8-add0-b274d8f8b336": {
+        "username": "Amit",
+        "title": "Not good",
+        "description": "Could be better.",
+        "rating": 4,
+        "recommend": true,
+        "timestamp": "2025-04-18T07:02:12.809243",
+        "cleanliness": 9,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Safe",
+        "hygiene_score": 9.5
+      }
+    },
+    "avg_hygiene_score": 6.7,
+    "status": "orange"
+  },
+  "vendor_26": {
+    "name": "Shiv Vada Pav Thane",
+    "city": "Thane",
+    "location": "213 Thane Street, Mumbai",
+    "contact": "+91-7960625372",
+    "timings": "9:00 AM - 9:45 PM",
+    "rating": 4.0,
+    "recentReviewCount": 2,
+    "menu": [
+      {
+        "name": "Samosa",
+        "price": 15
+      },
+      {
+        "name": "Masala Dosa",
+        "price": 60
+      },
+      {
+        "name": "Veg Frankie",
+        "price": 45
+      },
+      {
+        "name": "Bhel Puri",
+        "price": 25
+      }
+    ],
+    "reviews": {
+      "3c7d6c7a-b158-4ce6-bd1a-e02568d6e46d": {
+        "username": "Sneha",
+        "title": "Too spicy",
+        "description": "Highly recommended!",
+        "rating": 5,
+        "recommend": true,
+        "timestamp": "2025-04-18T07:02:12.809280",
+        "cleanliness": 8,
+        "ingredient_quality": "Unknown",
+        "water_safety": "Unsafe",
+        "hygiene_score": 6.5
+      },
+      "f2da3518-6dc8-4426-b5e8-2d8430334c70": {
+        "username": "Ravi",
+        "title": "Not good",
+        "description": "Bit oily but tasty.",
+        "rating": 3,
+        "recommend": false,
+        "timestamp": "2025-04-14T07:02:12.809292",
+        "cleanliness": 6,
+        "ingredient_quality": "Unknown",
+        "water_safety": "Unsafe",
+        "hygiene_score": 5.5
+      }
+    },
+    "avg_hygiene_score": 4.5,
+    "status": "red"
+  },
+  "vendor_27": {
+    "name": "Mumbai Bites Andheri",
+    "city": "Andheri",
+    "location": "102 Andheri Street, Mumbai",
+    "contact": "+91-8727822940",
+    "timings": "9:00 AM - 9:45 PM",
+    "rating": 4.5,
+    "recentReviewCount": 1,
+    "menu": [
+      {
+        "name": "Pani Puri",
+        "price": 30
+      },
+      {
+        "name": "Bhel Puri",
+        "price": 25
+      },
+      {
+        "name": "Samosa",
+        "price": 15
+      },
+      {
+        "name": "Masala Dosa",
+        "price": 60
+      }
+    ],
+    "reviews": {
+      "9bc71cc0-2734-4d69-8e71-37ef4b97d951": {
+        "username": "Rohit",
+        "title": "Not good",
+        "description": "Highly recommended!",
+        "rating": 3,
+        "recommend": true,
+        "timestamp": "2025-04-09T07:02:12.809316",
+        "cleanliness": 6,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Safe",
+        "hygiene_score": 8.0
+      },
+      "95550caa-c573-47fa-8a86-be000377441a": {
+        "username": "Tina",
+        "title": "Loved it",
+        "description": "Highly recommended!",
+        "rating": 5,
+        "recommend": true,
+        "timestamp": "2025-04-18T07:02:12.809329",
+        "cleanliness": 8,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Safe",
+        "hygiene_score": 9.0
+      },
+      "ca7bc8dc-9822-4c3b-82f9-18d00e7e6ed0": {
+        "username": "Anjali",
+        "title": "Too spicy",
+        "description": "Too spicy for me.",
+        "rating": 3,
+        "recommend": true,
+        "timestamp": "2025-04-10T07:02:12.809340",
+        "cleanliness": 7,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Safe",
+        "hygiene_score": 8.5
+      },
+      "8ab22ed3-7ae1-407d-a853-d299049acce7": {
+        "username": "Neha",
+        "title": "Loved it",
+        "description": "Amazing taste and quick service.",
+        "rating": 3,
+        "recommend": true,
+        "timestamp": "2025-04-18T07:02:12.809351",
+        "cleanliness": 2,
+        "ingredient_quality": "Unknown",
+        "water_safety": "Safe",
+        "hygiene_score": 4.8
+      }
+    },
+    "avg_hygiene_score": 4.8,
+    "status": "red"
+  },
+  "vendor_28": {
+    "name": "Rolls Mania Chembur",
+    "city": "Chembur",
+    "location": "266 Chembur Street, Mumbai",
+    "contact": "+91-8719882803",
+    "timings": "9:00 AM - 9:45 PM",
+    "rating": 4.8,
+    "recentReviewCount": 3,
+    "menu": [
+      {
+        "name": "Pav Bhaji",
+        "price": 50
+      },
+      {
+        "name": "Chicken Roll",
+        "price": 80
+      },
+      {
+        "name": "Vada Pav",
+        "price": 20
+      },
+      {
+        "name": "Bhel Puri",
+        "price": 25
+      }
+    ],
+    "reviews": {
+      "25b82b27-8303-4b74-a11b-e90a219bb8bb": {
+        "username": "Anjali",
+        "title": "Delicious!",
+        "description": "Amazing taste and quick service.",
+        "rating": 1,
+        "recommend": true,
+        "timestamp": "2025-04-09T07:02:12.809391",
+        "cleanliness": 7,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Safe",
+        "hygiene_score": 8.5
+      }
+    },
+    "avg_hygiene_score": 6.4,
+    "status": "orange"
+  },
+  "vendor_29": {
+    "name": "Dosa Delights Chembur",
+    "city": "Chembur",
+    "location": "32 Chembur Street, Mumbai",
+    "contact": "+91-7319005024",
+    "timings": "9:00 AM - 9:45 PM",
+    "rating": 4.8,
+    "recentReviewCount": 2,
+    "menu": [
+      {
+        "name": "Veg Frankie",
+        "price": 45
+      },
+      {
+        "name": "Samosa",
+        "price": 15
+      },
+      {
+        "name": "Chicken Roll",
+        "price": 80
+      },
+      {
+        "name": "Vada Pav",
+        "price": 20
+      }
+    ],
+    "reviews": {
+      "abbca79b-3338-4777-b309-2c0356170e72": {
+        "username": "Neha",
+        "title": "Delicious!",
+        "description": "Highly recommended!",
+        "rating": 5,
+        "recommend": false,
+        "timestamp": "2025-04-11T07:02:12.809436",
+        "cleanliness": 2,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Safe",
+        "hygiene_score": 6.0
+      },
+      "703ed667-9afe-431b-a57e-5a2b807cda71": {
+        "username": "Rohit",
+        "title": "Not good",
+        "description": "Amazing taste and quick service.",
+        "rating": 1,
+        "recommend": false,
+        "timestamp": "2025-04-13T07:02:12.809463",
+        "cleanliness": 8,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Safe",
+        "hygiene_score": 9.0
+      }
+    },
+    "avg_hygiene_score": 8.9,
+    "status": "green"
+  },
+  "vendor_30": {
+    "name": "Mumbai Bites Bhandup",
+    "city": "Bhandup",
+    "location": "115 Bhandup Street, Mumbai",
+    "contact": "+91-8482894080",
+    "timings": "9:00 AM - 9:45 PM",
+    "rating": 4.0,
+    "recentReviewCount": 0,
+    "menu": [
+      {
+        "name": "Vada Pav",
+        "price": 20
+      },
+      {
+        "name": "Pav Bhaji",
+        "price": 50
+      },
+      {
+        "name": "Bhel Puri",
+        "price": 25
+      },
+      {
+        "name": "Veg Frankie",
+        "price": 45
+      }
+    ],
+    "reviews": {
+      "9a23951b-06f7-4cb0-b701-39ca3bfabc8b": {
+        "username": "Neha",
+        "title": "Okayish",
+        "description": "Bit oily but tasty.",
+        "rating": 3,
+        "recommend": false,
+        "timestamp": "2025-04-14T07:02:12.809500",
+        "cleanliness": 1,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Unsafe",
+        "hygiene_score": 4.2
+      },
+      "a4244150-85f7-4e90-b5d3-bd0f25d243e3": {
+        "username": "Amit",
+        "title": "Okayish",
+        "description": "Could be better.",
+        "rating": 1,
+        "recommend": false,
+        "timestamp": "2025-04-17T07:02:12.809519",
+        "cleanliness": 4,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Safe",
+        "hygiene_score": 7.0
+      },
+      "ffc6404f-9562-4568-b356-8f10e1b1e67d": {
+        "username": "Ravi",
+        "title": "Not good",
+        "description": "Not worth the price.",
+        "rating": 2,
+        "recommend": true,
+        "timestamp": "2025-04-09T07:02:12.809536",
+        "cleanliness": 4,
+        "ingredient_quality": "Unknown",
+        "water_safety": "Safe",
+        "hygiene_score": 5.8
+      },
+      "439e4ee7-b870-4834-b634-45205d9808a5": {
+        "username": "Rohit",
+        "title": "Delicious!",
+        "description": "Too spicy for me.",
+        "rating": 3,
+        "recommend": true,
+        "timestamp": "2025-04-16T07:02:12.809551",
+        "cleanliness": 2,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Unsafe",
+        "hygiene_score": 4.8
+      }
+    },
+    "avg_hygiene_score": 7.6,
+    "status": "orange"
+  },
+  "vendor_31": {
+    "name": "Dosa Delights Mulund",
+    "city": "Mulund",
+    "location": "227 Mulund Street, Mumbai",
+    "contact": "+91-9598860171",
+    "timings": "9:00 AM - 9:45 PM",
+    "rating": 4.5,
+    "recentReviewCount": 1,
+    "menu": [
+      {
+        "name": "Veg Frankie",
+        "price": 45
+      },
+      {
+        "name": "Samosa",
+        "price": 15
+      },
+      {
+        "name": "Bhel Puri",
+        "price": 25
+      },
+      {
+        "name": "Pani Puri",
+        "price": 30
+      }
+    ],
+    "reviews": {
+      "c7f3f614-735a-4a87-817c-8f66d10e495d": {
+        "username": "Anjali",
+        "title": "Okayish",
+        "description": "Bit oily but tasty.",
+        "rating": 4,
+        "recommend": false,
+        "timestamp": "2025-04-09T07:02:12.809605",
+        "cleanliness": 5,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Unsafe",
+        "hygiene_score": 6.2
+      },
+      "830af8dc-abe8-4546-8b7c-40deb832deb0": {
+        "username": "Anjali",
+        "title": "Not good",
+        "description": "Bit oily but tasty.",
+        "rating": 3,
+        "recommend": false,
+        "timestamp": "2025-04-12T07:02:12.809632",
+        "cleanliness": 8,
+        "ingredient_quality": "Unknown",
+        "water_safety": "Unsafe",
+        "hygiene_score": 6.5
+      }
+    },
+    "avg_hygiene_score": 4.7,
+    "status": "red"
+  },
+  "vendor_32": {
+    "name": "The Frankie House Mulund",
+    "city": "Mulund",
+    "location": "142 Mulund Street, Mumbai",
+    "contact": "+91-8720181144",
+    "timings": "9:00 AM - 9:45 PM",
+    "rating": 4.3,
+    "recentReviewCount": 0,
+    "menu": [
+      {
+        "name": "Veg Frankie",
+        "price": 45
+      },
+      {
+        "name": "Pani Puri",
+        "price": 30
+      },
+      {
+        "name": "Pav Bhaji",
+        "price": 50
+      },
+      {
+        "name": "Samosa",
+        "price": 15
+      }
+    ],
+    "reviews": {
+      "1c25e865-0fda-4192-883a-5771b131defb": {
+        "username": "Anjali",
+        "title": "Too spicy",
+        "description": "Bit oily but tasty.",
+        "rating": 4,
+        "recommend": true,
+        "timestamp": "2025-04-16T07:02:12.809672",
+        "cleanliness": 8,
+        "ingredient_quality": "Unknown",
+        "water_safety": "Safe",
+        "hygiene_score": 7.8
+      }
+    },
+    "avg_hygiene_score": 7.9,
+    "status": "orange"
+  },
+  "vendor_33": {
+    "name": "Shiv Vada Pav Chembur",
+    "city": "Chembur",
+    "location": "144 Chembur Street, Mumbai",
+    "contact": "+91-8456975578",
+    "timings": "9:00 AM - 9:45 PM",
+    "rating": 3.9,
+    "recentReviewCount": 4,
+    "menu": [
+      {
+        "name": "Pani Puri",
+        "price": 30
+      },
+      {
+        "name": "Veg Frankie",
+        "price": 45
+      },
+      {
+        "name": "Pav Bhaji",
+        "price": 50
+      },
+      {
+        "name": "Bhel Puri",
+        "price": 25
+      }
+    ],
+    "reviews": {
+      "1f6af160-1aca-45ab-b863-03460b28b7c1": {
+        "username": "Priya",
+        "title": "Too spicy",
+        "description": "Too spicy for me.",
+        "rating": 1,
+        "recommend": false,
+        "timestamp": "2025-04-14T07:02:12.809713",
+        "cleanliness": 6,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Unsafe",
+        "hygiene_score": 6.8
+      },
+      "441c20f2-1ea0-4e0d-96ae-6c4b7f3c56a4": {
+        "username": "Vikram",
+        "title": "Loved it",
+        "description": "Could be better.",
+        "rating": 3,
+        "recommend": true,
+        "timestamp": "2025-04-15T07:02:12.809732",
+        "cleanliness": 7,
+        "ingredient_quality": "Unknown",
+        "water_safety": "Safe",
+        "hygiene_score": 7.2
+      },
+      "d3365b68-b644-4b3a-a0e4-3628bbd3ee83": {
+        "username": "Anjali",
+        "title": "Loved it",
+        "description": "Highly recommended!",
+        "rating": 1,
+        "recommend": false,
+        "timestamp": "2025-04-11T07:02:12.809752",
+        "cleanliness": 8,
+        "ingredient_quality": "Unknown",
+        "water_safety": "Unsafe",
+        "hygiene_score": 6.5
+      }
+    },
+    "avg_hygiene_score": 9.3,
+    "status": "green"
+  },
+  "vendor_34": {
+    "name": "Spicy Tandoor Ghatkopar",
+    "city": "Ghatkopar",
+    "location": "20 Ghatkopar Street, Mumbai",
+    "contact": "+91-8303113882",
+    "timings": "9:00 AM - 9:45 PM",
+    "rating": 3.9,
+    "recentReviewCount": 4,
+    "menu": [
+      {
+        "name": "Masala Dosa",
+        "price": 60
+      },
+      {
+        "name": "Bhel Puri",
+        "price": 25
+      },
+      {
+        "name": "Vada Pav",
+        "price": 20
+      },
+      {
+        "name": "Chicken Roll",
+        "price": 80
+      }
+    ],
+    "reviews": {
+      "2952228c-63e1-47be-b674-88afe9a4d7eb": {
+        "username": "Sneha",
+        "title": "Delicious!",
+        "description": "Too spicy for me.",
+        "rating": 1,
+        "recommend": true,
+        "timestamp": "2025-04-13T07:02:12.809786",
+        "cleanliness": 4,
+        "ingredient_quality": "Unknown",
+        "water_safety": "Unsafe",
+        "hygiene_score": 4.5
+      },
+      "15be59dc-ea1f-4233-99f0-3f667608a00b": {
+        "username": "Sameer",
+        "title": "Delicious!",
+        "description": "Not worth the price.",
+        "rating": 2,
+        "recommend": true,
+        "timestamp": "2025-04-12T07:02:12.809798",
+        "cleanliness": 6,
+        "ingredient_quality": "Unknown",
+        "water_safety": "Safe",
+        "hygiene_score": 6.8
+      }
+    },
+    "avg_hygiene_score": 7.9,
+    "status": "orange"
+  },
+  "vendor_35": {
+    "name": "Spicy Tandoor Andheri",
+    "city": "Andheri",
+    "location": "264 Andheri Street, Mumbai",
+    "contact": "+91-9633362338",
+    "timings": "9:00 AM - 9:45 PM",
+    "rating": 4.6,
+    "recentReviewCount": 4,
+    "menu": [
+      {
+        "name": "Pav Bhaji",
+        "price": 50
+      },
+      {
+        "name": "Veg Frankie",
+        "price": 45
+      },
+      {
+        "name": "Samosa",
+        "price": 15
+      },
+      {
+        "name": "Bhel Puri",
+        "price": 25
+      }
+    ],
+    "reviews": {
+      "45a77f3e-4f9b-49ad-82d8-0b5fa2f8a446": {
+        "username": "Vikram",
+        "title": "Will visit again",
+        "description": "Amazing taste and quick service.",
+        "rating": 4,
+        "recommend": true,
+        "timestamp": "2025-04-18T07:02:12.809831",
+        "cleanliness": 2,
+        "ingredient_quality": "Unknown",
+        "water_safety": "Unsafe",
+        "hygiene_score": 3.5
+      },
+      "969fc1cd-38a6-420d-975a-cc58616b7236": {
+        "username": "Tina",
+        "title": "Not good",
+        "description": "Highly recommended!",
+        "rating": 5,
+        "recommend": false,
+        "timestamp": "2025-04-10T07:02:12.809868",
+        "cleanliness": 1,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Safe",
+        "hygiene_score": 5.5
+      }
+    },
+    "avg_hygiene_score": 6.1,
+    "status": "orange"
+  },
+  "vendor_36": {
+    "name": "Shiv Vada Pav Bhandup",
+    "city": "Bhandup",
+    "location": "55 Bhandup Street, Mumbai",
+    "contact": "+91-9706648160",
+    "timings": "9:00 AM - 9:45 PM",
+    "rating": 4.3,
+    "recentReviewCount": 3,
+    "menu": [
+      {
+        "name": "Pani Puri",
+        "price": 30
+      },
+      {
+        "name": "Pav Bhaji",
+        "price": 50
+      },
+      {
+        "name": "Veg Frankie",
+        "price": 45
+      },
+      {
+        "name": "Masala Dosa",
+        "price": 60
+      }
+    ],
+    "reviews": {
+      "aed2d173-c7f0-4fdd-b0c3-3f4e6d4d0b09": {
+        "username": "Amit",
+        "title": "Will visit again",
+        "description": "Not worth the price.",
+        "rating": 1,
+        "recommend": false,
+        "timestamp": "2025-04-18T07:02:12.809905",
+        "cleanliness": 10,
+        "ingredient_quality": "Unknown",
+        "water_safety": "Safe",
+        "hygiene_score": 8.8
+      },
+      "58caecaf-1842-483c-b655-4d2fc45314a2": {
+        "username": "Ravi",
+        "title": "Okayish",
+        "description": "Highly recommended!",
+        "rating": 2,
+        "recommend": true,
+        "timestamp": "2025-04-16T07:02:12.809917",
+        "cleanliness": 3,
+        "ingredient_quality": "Unknown",
+        "water_safety": "Unsafe",
+        "hygiene_score": 4.0
+      },
+      "60f038fc-b1ff-4c4c-8857-27eb6fa65af3": {
+        "username": "Priya",
+        "title": "Okayish",
+        "description": "Not worth the price.",
+        "rating": 4,
+        "recommend": false,
+        "timestamp": "2025-04-10T07:02:12.809928",
+        "cleanliness": 10,
+        "ingredient_quality": "Unknown",
+        "water_safety": "Unsafe",
+        "hygiene_score": 7.5
+      }
+    },
+    "avg_hygiene_score": 8.0,
+    "status": "green"
+  },
+  "vendor_37": {
+    "name": "The Frankie House Chembur",
+    "city": "Chembur",
+    "location": "199 Chembur Street, Mumbai",
+    "contact": "+91-9014953707",
+    "timings": "9:00 AM - 9:45 PM",
+    "rating": 3.9,
+    "recentReviewCount": 1,
+    "menu": [
+      {
+        "name": "Samosa",
+        "price": 15
+      },
+      {
+        "name": "Pav Bhaji",
+        "price": 50
+      },
+      {
+        "name": "Bhel Puri",
+        "price": 25
+      },
+      {
+        "name": "Veg Frankie",
+        "price": 45
+      }
+    ],
+    "reviews": {
+      "ce1e3e6b-e4df-4d9e-b626-a99976af7011": {
+        "username": "Vikram",
+        "title": "Not good",
+        "description": "Bit oily but tasty.",
+        "rating": 3,
+        "recommend": true,
+        "timestamp": "2025-04-12T07:02:12.809958",
+        "cleanliness": 8,
+        "ingredient_quality": "Unknown",
+        "water_safety": "Safe",
+        "hygiene_score": 7.8
+      },
+      "64ed87e5-8d34-4911-8949-b4a7f349a344": {
+        "username": "Priya",
+        "title": "Delicious!",
+        "description": "Not worth the price.",
+        "rating": 2,
+        "recommend": false,
+        "timestamp": "2025-04-15T07:02:12.809975",
+        "cleanliness": 6,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Unsafe",
+        "hygiene_score": 6.8
+      }
+    },
+    "avg_hygiene_score": 5.4,
+    "status": "orange"
+  },
+  "vendor_38": {
+    "name": "Street Curry Vile Parle",
+    "city": "Vile Parle",
+    "location": "11 Vile Parle Street, Mumbai",
+    "contact": "+91-9992132729",
+    "timings": "9:00 AM - 9:45 PM",
+    "rating": 4.2,
+    "recentReviewCount": 5,
+    "menu": [
+      {
+        "name": "Chicken Roll",
+        "price": 80
+      },
+      {
+        "name": "Pani Puri",
+        "price": 30
+      },
+      {
+        "name": "Bhel Puri",
+        "price": 25
+      },
+      {
+        "name": "Vada Pav",
+        "price": 20
+      }
+    ],
+    "reviews": {
+      "04df1255-8743-433f-960a-d0c055e486f7": {
+        "username": "Ravi",
+        "title": "Okayish",
+        "description": "Not worth the price.",
+        "rating": 5,
+        "recommend": false,
+        "timestamp": "2025-04-09T07:02:12.810017",
+        "cleanliness": 5,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Safe",
+        "hygiene_score": 7.5
+      },
+      "2f5d62d6-552a-4520-a7d9-e96a2cc6b474": {
+        "username": "Rohit",
+        "title": "Okayish",
+        "description": "Could be better.",
+        "rating": 2,
+        "recommend": true,
+        "timestamp": "2025-04-15T07:02:12.810030",
+        "cleanliness": 7,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Unsafe",
+        "hygiene_score": 7.2
+      }
+    },
+    "avg_hygiene_score": 4.3,
+    "status": "red"
+  },
+  "vendor_39": {
+    "name": "Street Curry Dadar",
+    "city": "Dadar",
+    "location": "100 Dadar Street, Mumbai",
+    "contact": "+91-9421995000",
+    "timings": "9:00 AM - 9:45 PM",
+    "rating": 4.5,
+    "recentReviewCount": 0,
+    "menu": [
+      {
+        "name": "Masala Dosa",
+        "price": 60
+      },
+      {
+        "name": "Bhel Puri",
+        "price": 25
+      },
+      {
+        "name": "Samosa",
+        "price": 15
+      },
+      {
+        "name": "Pav Bhaji",
+        "price": 50
+      }
+    ],
+    "reviews": {
+      "ec1fadd1-1229-46c7-a9b6-0e8ada444750": {
+        "username": "Tina",
+        "title": "Loved it",
+        "description": "Too spicy for me.",
+        "rating": 5,
+        "recommend": false,
+        "timestamp": "2025-04-11T07:02:12.810060",
+        "cleanliness": 9,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Safe",
+        "hygiene_score": 9.5
+      },
+      "8209dd66-10df-4729-a2c3-dc2a7ef15bd8": {
+        "username": "Rohit",
+        "title": "Okayish",
+        "description": "Could be better.",
+        "rating": 4,
+        "recommend": false,
+        "timestamp": "2025-04-09T07:02:12.810071",
+        "cleanliness": 3,
+        "ingredient_quality": "Unknown",
+        "water_safety": "Safe",
+        "hygiene_score": 5.2
+      },
+      "02beb09d-4ff2-4018-b16b-6ed709b2e467": {
+        "username": "Neha",
+        "title": "Will visit again",
+        "description": "Amazing taste and quick service.",
+        "rating": 5,
+        "recommend": true,
+        "timestamp": "2025-04-18T07:02:12.810085",
+        "cleanliness": 3,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Unsafe",
+        "hygiene_score": 5.2
+      },
+      "0963cb4f-ed52-4e26-9d01-1b54d22477bb": {
+        "username": "Priya",
+        "title": "Too spicy",
+        "description": "Could be better.",
+        "rating": 1,
+        "recommend": false,
+        "timestamp": "2025-04-17T07:02:12.810097",
+        "cleanliness": 10,
+        "ingredient_quality": "Unknown",
+        "water_safety": "Unsafe",
+        "hygiene_score": 7.5
+      }
+    },
+    "avg_hygiene_score": 8.3,
+    "status": "green"
+  },
+  "vendor_40": {
+    "name": "Dosa Delights Ghatkopar",
+    "city": "Ghatkopar",
+    "location": "251 Ghatkopar Street, Mumbai",
+    "contact": "+91-7019758639",
+    "timings": "9:00 AM - 9:45 PM",
+    "rating": 3.9,
+    "recentReviewCount": 5,
+    "menu": [
+      {
+        "name": "Vada Pav",
+        "price": 20
+      },
+      {
+        "name": "Samosa",
+        "price": 15
+      },
+      {
+        "name": "Pani Puri",
+        "price": 30
+      },
+      {
+        "name": "Masala Dosa",
+        "price": 60
+      }
+    ],
+    "reviews": {
+      "08d08c67-fc1f-4477-a651-e160717f2417": {
+        "username": "Vikram",
+        "title": "Okayish",
+        "description": "Too spicy for me.",
+        "rating": 5,
+        "recommend": false,
+        "timestamp": "2025-04-17T07:02:12.810138",
+        "cleanliness": 10,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Safe",
+        "hygiene_score": 10.0
+      },
+      "56dc54da-5839-4171-be10-97c30668f6d9": {
+        "username": "Priya",
+        "title": "Too spicy",
+        "description": "Not worth the price.",
+        "rating": 2,
+        "recommend": true,
+        "timestamp": "2025-04-18T07:02:12.810154",
+        "cleanliness": 1,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Unsafe",
+        "hygiene_score": 4.2
+      },
+      "3985dea2-3546-4a26-abac-bacb889d78ae": {
+        "username": "Rohit",
+        "title": "Too spicy",
+        "description": "Highly recommended!",
+        "rating": 1,
+        "recommend": true,
+        "timestamp": "2025-04-14T07:02:12.810164",
+        "cleanliness": 6,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Unsafe",
+        "hygiene_score": 6.8
+      }
+    },
+    "avg_hygiene_score": 5.1,
+    "status": "orange"
+  },
+  "vendor_41": {
+    "name": "The Frankie House Vile Parle",
+    "city": "Vile Parle",
+    "location": "63 Vile Parle Street, Mumbai",
+    "contact": "+91-7717169679",
+    "timings": "9:00 AM - 9:45 PM",
+    "rating": 5.0,
+    "recentReviewCount": 2,
+    "menu": [
+      {
+        "name": "Masala Dosa",
+        "price": 60
+      },
+      {
+        "name": "Bhel Puri",
+        "price": 25
+      },
+      {
+        "name": "Veg Frankie",
+        "price": 45
+      },
+      {
+        "name": "Vada Pav",
+        "price": 20
+      }
+    ],
+    "reviews": {
+      "2a833d17-d7cd-465c-91cd-b698edb41ed9": {
+        "username": "Anjali",
+        "title": "Will visit again",
+        "description": "Amazing taste and quick service.",
+        "rating": 4,
+        "recommend": false,
+        "timestamp": "2025-04-12T07:02:12.810193",
+        "cleanliness": 3,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Safe",
+        "hygiene_score": 6.5
+      },
+      "b83d3419-dbe7-4d5e-a5b5-36fbe79d8983": {
+        "username": "Rohit",
+        "title": "Will visit again",
+        "description": "Could be better.",
+        "rating": 2,
+        "recommend": true,
+        "timestamp": "2025-04-19T07:02:12.810204",
+        "cleanliness": 1,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Safe",
+        "hygiene_score": 5.5
+      },
+      "b4595eff-480c-4dca-9976-60ef13a14732": {
+        "username": "Sameer",
+        "title": "Will visit again",
+        "description": "Bit oily but tasty.",
+        "rating": 2,
+        "recommend": true,
+        "timestamp": "2025-04-19T07:02:12.810217",
+        "cleanliness": 5,
+        "ingredient_quality": "Unknown",
+        "water_safety": "Unsafe",
+        "hygiene_score": 5.0
+      }
+    },
+    "avg_hygiene_score": 7.2,
+    "status": "orange"
+  },
+  "vendor_42": {
+    "name": "Spicy Tandoor Ghatkopar",
+    "city": "Ghatkopar",
+    "location": "122 Ghatkopar Street, Mumbai",
+    "contact": "+91-7823646625",
+    "timings": "9:00 AM - 9:45 PM",
+    "rating": 4.0,
+    "recentReviewCount": 2,
+    "menu": [
+      {
+        "name": "Samosa",
+        "price": 15
+      },
+      {
+        "name": "Vada Pav",
+        "price": 20
+      },
+      {
+        "name": "Masala Dosa",
+        "price": 60
+      },
+      {
+        "name": "Pav Bhaji",
+        "price": 50
+      }
+    ],
+    "reviews": {
+      "43b8ca31-a7cf-428b-8742-3102f81acd41": {
+        "username": "Anjali",
+        "title": "Too spicy",
+        "description": "Amazing taste and quick service.",
+        "rating": 4,
+        "recommend": false,
+        "timestamp": "2025-04-15T07:02:12.810257",
+        "cleanliness": 6,
+        "ingredient_quality": "Unknown",
+        "water_safety": "Unsafe",
+        "hygiene_score": 5.5
+      },
+      "9762c202-a507-458e-b807-1412e929d142": {
+        "username": "Sameer",
+        "title": "Too spicy",
+        "description": "Amazing taste and quick service.",
+        "rating": 2,
+        "recommend": true,
+        "timestamp": "2025-04-12T07:02:12.810270",
+        "cleanliness": 8,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Safe",
+        "hygiene_score": 9.0
+      },
+      "ecf55f52-d5b4-4943-b3ad-349b67885634": {
+        "username": "Sameer",
+        "title": "Delicious!",
+        "description": "Could be better.",
+        "rating": 2,
+        "recommend": true,
+        "timestamp": "2025-04-11T07:02:12.810281",
+        "cleanliness": 9,
+        "ingredient_quality": "Unknown",
+        "water_safety": "Unsafe",
+        "hygiene_score": 7.0
+      },
+      "da2dace5-8287-4fca-9a38-78b299f14384": {
+        "username": "Anjali",
+        "title": "Delicious!",
+        "description": "Too spicy for me.",
+        "rating": 4,
+        "recommend": false,
+        "timestamp": "2025-04-19T07:02:12.810291",
+        "cleanliness": 5,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Unsafe",
+        "hygiene_score": 6.2
+      }
+    },
+    "avg_hygiene_score": 4.9,
+    "status": "red"
+  },
+  "vendor_43": {
+    "name": "Dosa Delights Thane",
+    "city": "Thane",
+    "location": "293 Thane Street, Mumbai",
+    "contact": "+91-8428088612",
+    "timings": "9:00 AM - 9:45 PM",
+    "rating": 4.9,
+    "recentReviewCount": 0,
+    "menu": [
+      {
+        "name": "Bhel Puri",
+        "price": 25
+      },
+      {
+        "name": "Pani Puri",
+        "price": 30
+      },
+      {
+        "name": "Pav Bhaji",
+        "price": 50
+      },
+      {
+        "name": "Veg Frankie",
+        "price": 45
+      }
+    ],
+    "reviews": {
+      "1dd72eae-7a73-49c0-8dc8-84194c415579": {
+        "username": "Tina",
+        "title": "Will visit again",
+        "description": "Highly recommended!",
+        "rating": 5,
+        "recommend": false,
+        "timestamp": "2025-04-10T07:02:12.810325",
+        "cleanliness": 5,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Safe",
+        "hygiene_score": 7.5
+      },
+      "ec7ac452-b68d-45e4-92c8-5011b07c9d4d": {
+        "username": "Tina",
+        "title": "Will visit again",
+        "description": "Highly recommended!",
+        "rating": 5,
+        "recommend": true,
+        "timestamp": "2025-04-10T07:02:12.810337",
+        "cleanliness": 6,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Unsafe",
+        "hygiene_score": 6.8
+      },
+      "6a58bfca-ee19-491c-a8c2-edfa13dabdfd": {
+        "username": "Amit",
+        "title": "Okayish",
+        "description": "Could be better.",
+        "rating": 1,
+        "recommend": false,
+        "timestamp": "2025-04-10T07:02:12.810348",
+        "cleanliness": 1,
+        "ingredient_quality": "Unknown",
+        "water_safety": "Safe",
+        "hygiene_score": 4.2
+      },
+      "108c2401-6de7-4d86-85c4-96bef2453bc0": {
+        "username": "Neha",
+        "title": "Loved it",
+        "description": "Bit oily but tasty.",
+        "rating": 5,
+        "recommend": true,
+        "timestamp": "2025-04-15T07:02:12.810359",
+        "cleanliness": 2,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Safe",
+        "hygiene_score": 6.0
+      }
+    },
+    "avg_hygiene_score": 4.3,
+    "status": "red"
+  },
+  "vendor_44": {
+    "name": "Chaat Junction Vile Parle",
+    "city": "Vile Parle",
+    "location": "161 Vile Parle Street, Mumbai",
+    "contact": "+91-7428993569",
+    "timings": "9:00 AM - 9:45 PM",
+    "rating": 5.0,
+    "recentReviewCount": 0,
+    "menu": [
+      {
+        "name": "Veg Frankie",
+        "price": 45
+      },
+      {
+        "name": "Masala Dosa",
+        "price": 60
+      },
+      {
+        "name": "Bhel Puri",
+        "price": 25
+      },
+      {
+        "name": "Samosa",
+        "price": 15
+      }
+    ],
+    "reviews": {
+      "110b5190-bbb8-490a-a848-f3fcbd25060c": {
+        "username": "Vikram",
+        "title": "Too spicy",
+        "description": "Amazing taste and quick service.",
+        "rating": 4,
+        "recommend": false,
+        "timestamp": "2025-04-14T07:02:12.810395",
+        "cleanliness": 7,
+        "ingredient_quality": "Unknown",
+        "water_safety": "Unsafe",
+        "hygiene_score": 6.0
+      },
+      "26c63641-36e6-4978-9284-840212de4a69": {
+        "username": "Sameer",
+        "title": "Okayish",
+        "description": "Too spicy for me.",
+        "rating": 5,
+        "recommend": false,
+        "timestamp": "2025-04-11T07:02:12.810409",
+        "cleanliness": 4,
+        "ingredient_quality": "Unknown",
+        "water_safety": "Safe",
+        "hygiene_score": 5.8
+      },
+      "b6ca5256-8488-41c7-807b-cda0c01e9221": {
+        "username": "Tina",
+        "title": "Not good",
+        "description": "Could be better.",
+        "rating": 4,
+        "recommend": true,
+        "timestamp": "2025-04-09T07:02:12.810420",
+        "cleanliness": 6,
+        "ingredient_quality": "Unknown",
+        "water_safety": "Unsafe",
+        "hygiene_score": 5.5
+      }
+    },
+    "avg_hygiene_score": 4.6,
+    "status": "red"
+  },
+  "vendor_45": {
+    "name": "Rolls Mania Thane",
+    "city": "Thane",
+    "location": "171 Thane Street, Mumbai",
+    "contact": "+91-7194916920",
+    "timings": "9:00 AM - 9:45 PM",
+    "rating": 4.5,
+    "recentReviewCount": 3,
+    "menu": [
+      {
+        "name": "Vada Pav",
+        "price": 20
+      },
+      {
+        "name": "Pani Puri",
+        "price": 30
+      },
+      {
+        "name": "Samosa",
+        "price": 15
+      },
+      {
+        "name": "Chicken Roll",
+        "price": 80
+      }
+    ],
+    "reviews": {
+      "c49dc5c7-594c-4a2e-9d31-8a7c9c5a134b": {
+        "username": "Tina",
+        "title": "Okayish",
+        "description": "Could be better.",
+        "rating": 1,
+        "recommend": false,
+        "timestamp": "2025-04-13T07:02:12.810442",
+        "cleanliness": 4,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Safe",
+        "hygiene_score": 7.0
+      },
+      "6c01f0d0-19eb-4bf1-81e0-93152a922ac2": {
+        "username": "Priya",
+        "title": "Okayish",
+        "description": "Amazing taste and quick service.",
+        "rating": 5,
+        "recommend": true,
+        "timestamp": "2025-04-12T07:02:12.810453",
+        "cleanliness": 8,
+        "ingredient_quality": "Unknown",
+        "water_safety": "Unsafe",
+        "hygiene_score": 6.5
+      }
+    },
+    "avg_hygiene_score": 7.0,
+    "status": "orange"
+  },
+  "vendor_46": {
+    "name": "Dosa Delights Vile Parle",
+    "city": "Vile Parle",
+    "location": "246 Vile Parle Street, Mumbai",
+    "contact": "+91-7347824649",
+    "timings": "9:00 AM - 9:45 PM",
+    "rating": 3.7,
+    "recentReviewCount": 1,
+    "menu": [
+      {
+        "name": "Pani Puri",
+        "price": 30
+      },
+      {
+        "name": "Samosa",
+        "price": 15
+      },
+      {
+        "name": "Veg Frankie",
+        "price": 45
+      },
+      {
+        "name": "Bhel Puri",
+        "price": 25
+      }
+    ],
+    "reviews": {
+      "c7ef65db-1c06-4753-849f-a18e23b4d2df": {
+        "username": "Vikram",
+        "title": "Will visit again",
+        "description": "Could be better.",
+        "rating": 4,
+        "recommend": false,
+        "timestamp": "2025-04-09T07:02:12.810482",
+        "cleanliness": 5,
+        "ingredient_quality": "Unknown",
+        "water_safety": "Unsafe",
+        "hygiene_score": 5.0
+      },
+      "5769fd8b-5817-4054-a338-d07a12f28450": {
+        "username": "Sameer",
+        "title": "Loved it",
+        "description": "Highly recommended!",
+        "rating": 5,
+        "recommend": false,
+        "timestamp": "2025-04-13T07:02:12.810494",
+        "cleanliness": 1,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Safe",
+        "hygiene_score": 5.5
+      },
+      "532b0f4f-f2e4-480b-ae12-e83fc289bda9": {
+        "username": "Sneha",
+        "title": "Okayish",
+        "description": "Amazing taste and quick service.",
+        "rating": 4,
+        "recommend": true,
+        "timestamp": "2025-04-13T07:02:12.810504",
+        "cleanliness": 7,
+        "ingredient_quality": "Unknown",
+        "water_safety": "Safe",
+        "hygiene_score": 7.2
+      },
+      "dddd2ec9-37cd-4d16-afb2-0e7113d7e23f": {
+        "username": "Vikram",
+        "title": "Loved it",
+        "description": "Too spicy for me.",
+        "rating": 3,
+        "recommend": true,
+        "timestamp": "2025-04-12T07:02:12.810515",
+        "cleanliness": 3,
+        "ingredient_quality": "Unknown",
+        "water_safety": "Safe",
+        "hygiene_score": 5.2
+      }
+    },
+    "avg_hygiene_score": 5.1,
+    "status": "orange"
+  },
+  "vendor_47": {
+    "name": "Chaat Junction Bhandup",
+    "city": "Bhandup",
+    "location": "140 Bhandup Street, Mumbai",
+    "contact": "+91-9016580514",
+    "timings": "9:00 AM - 9:45 PM",
+    "rating": 3.7,
+    "recentReviewCount": 4,
+    "menu": [
+      {
+        "name": "Bhel Puri",
+        "price": 25
+      },
+      {
+        "name": "Samosa",
+        "price": 15
+      },
+      {
+        "name": "Masala Dosa",
+        "price": 60
+      },
+      {
+        "name": "Pani Puri",
+        "price": 30
+      }
+    ],
+    "reviews": {
+      "29f522ac-8765-4b9b-9739-53df8241717a": {
+        "username": "Sneha",
+        "title": "Loved it",
+        "description": "Bit oily but tasty.",
+        "rating": 1,
+        "recommend": false,
+        "timestamp": "2025-04-17T07:02:12.810552",
+        "cleanliness": 4,
+        "ingredient_quality": "Unknown",
+        "water_safety": "Safe",
+        "hygiene_score": 5.8
+      },
+      "05b77133-d311-4744-a496-e49e3c2afd40": {
+        "username": "Tina",
+        "title": "Too spicy",
+        "description": "Could be better.",
+        "rating": 5,
+        "recommend": false,
+        "timestamp": "2025-04-09T07:02:12.810569",
+        "cleanliness": 8,
+        "ingredient_quality": "Unknown",
+        "water_safety": "Safe",
+        "hygiene_score": 7.8
+      },
+      "0d9bfaf3-1b2e-4ed7-8a2e-ea3cb7cfd4d1": {
+        "username": "Sneha",
+        "title": "Not good",
+        "description": "Bit oily but tasty.",
+        "rating": 4,
+        "recommend": false,
+        "timestamp": "2025-04-13T07:02:12.810584",
+        "cleanliness": 10,
+        "ingredient_quality": "Unknown",
+        "water_safety": "Safe",
+        "hygiene_score": 8.8
+      },
+      "99f01167-99f4-44d9-a5e6-b45e4600c806": {
+        "username": "Sneha",
+        "title": "Too spicy",
+        "description": "Not worth the price.",
+        "rating": 1,
+        "recommend": false,
+        "timestamp": "2025-04-15T07:02:12.810599",
+        "cleanliness": 3,
+        "ingredient_quality": "Unknown",
+        "water_safety": "Safe",
+        "hygiene_score": 5.2
+      }
+    },
+    "avg_hygiene_score": 5.7,
+    "status": "orange"
+  },
+  "vendor_48": {
+    "name": "Dosa Delights Chembur",
+    "city": "Chembur",
+    "location": "274 Chembur Street, Mumbai",
+    "contact": "+91-9296900475",
+    "timings": "9:00 AM - 9:45 PM",
+    "rating": 3.6,
+    "recentReviewCount": 5,
+    "menu": [
+      {
+        "name": "Samosa",
+        "price": 15
+      },
+      {
+        "name": "Pani Puri",
+        "price": 30
+      },
+      {
+        "name": "Pav Bhaji",
+        "price": 50
+      },
+      {
+        "name": "Veg Frankie",
+        "price": 45
+      }
+    ],
+    "reviews": {
+      "aa780ee4-809c-46b7-a22a-3291dbbebb9a": {
+        "username": "Anjali",
+        "title": "Loved it",
+        "description": "Not worth the price.",
+        "rating": 5,
+        "recommend": false,
+        "timestamp": "2025-04-19T07:02:12.810701",
+        "cleanliness": 2,
+        "ingredient_quality": "Unknown",
+        "water_safety": "Unsafe",
+        "hygiene_score": 3.5
+      },
+      "f9913140-ed20-4871-8b67-01d674edd3fa": {
+        "username": "Sneha",
+        "title": "Delicious!",
+        "description": "Not worth the price.",
+        "rating": 4,
+        "recommend": false,
+        "timestamp": "2025-04-12T07:02:12.810747",
+        "cleanliness": 3,
+        "ingredient_quality": "Unknown",
+        "water_safety": "Safe",
+        "hygiene_score": 5.2
+      }
+    },
+    "avg_hygiene_score": 6.1,
+    "status": "orange"
+  },
+  "vendor_49": {
+    "name": "Street Curry Kurla",
+    "city": "Kurla",
+    "location": "197 Kurla Street, Mumbai",
+    "contact": "+91-9206221157",
+    "timings": "9:00 AM - 9:45 PM",
+    "rating": 4.6,
+    "recentReviewCount": 2,
+    "menu": [
+      {
+        "name": "Samosa",
+        "price": 15
+      },
+      {
+        "name": "Veg Frankie",
+        "price": 45
+      },
+      {
+        "name": "Chicken Roll",
+        "price": 80
+      },
+      {
+        "name": "Pani Puri",
+        "price": 30
+      }
+    ],
+    "reviews": {
+      "7bafc7e7-52d3-49d4-8c1e-0b93788c0d06": {
+        "username": "Sameer",
+        "title": "Too spicy",
+        "description": "Highly recommended!",
+        "rating": 5,
+        "recommend": true,
+        "timestamp": "2025-04-16T07:02:12.810813",
+        "cleanliness": 9,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Safe",
+        "hygiene_score": 9.5
+      },
+      "bc182acf-088c-4f5d-b42d-a738b901ac8c": {
+        "username": "Priya",
+        "title": "Delicious!",
+        "description": "Amazing taste and quick service.",
+        "rating": 3,
+        "recommend": true,
+        "timestamp": "2025-04-17T07:02:12.810841",
+        "cleanliness": 1,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Safe",
+        "hygiene_score": 5.5
+      },
+      "c35fc969-bacb-45ab-9cdc-ca9752b29a03": {
+        "username": "Sneha",
+        "title": "Delicious!",
+        "description": "Not worth the price.",
+        "rating": 5,
+        "recommend": true,
+        "timestamp": "2025-04-17T07:02:12.810860",
+        "cleanliness": 8,
+        "ingredient_quality": "Unknown",
+        "water_safety": "Unsafe",
+        "hygiene_score": 6.5
+      }
+    },
+    "avg_hygiene_score": 8.6,
+    "status": "green"
+  },
+  "vendor_50": {
+    "name": "Bombay Sandwich Borivali",
+    "city": "Borivali",
+    "location": "7 Borivali Street, Mumbai",
+    "contact": "+91-7422879186",
+    "timings": "9:00 AM - 9:45 PM",
+    "rating": 3.7,
+    "recentReviewCount": 2,
+    "menu": [
+      {
+        "name": "Veg Frankie",
+        "price": 45
+      },
+      {
+        "name": "Vada Pav",
+        "price": 20
+      },
+      {
+        "name": "Pav Bhaji",
+        "price": 50
+      },
+      {
+        "name": "Bhel Puri",
+        "price": 25
+      }
+    ],
+    "reviews": {
+      "4c9f95e4-64d5-401e-910f-d09320ad9e1a": {
+        "username": "Ravi",
+        "title": "Loved it",
+        "description": "Too spicy for me.",
+        "rating": 1,
+        "recommend": false,
+        "timestamp": "2025-04-14T07:02:12.810921",
+        "cleanliness": 9,
+        "ingredient_quality": "Fresh",
+        "water_safety": "Safe",
+        "hygiene_score": 9.5
+      }
+    },
+    "avg_hygiene_score": 5.9,
+    "status": "orange"
+  }
+}

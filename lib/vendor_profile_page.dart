@@ -15,11 +15,16 @@ class VendorProfilePage extends StatelessWidget {
         builder: (context, snapshot) {
           if (!snapshot.hasData) return Center(child: CircularProgressIndicator());
           var vendor = snapshot.data!;
-          var name = vendor['name'];
-          var location = vendor['location'];
-          var contact = vendor['contact'];
-          var timings = vendor['timings'];
-          var menu = vendor['menu'] ?? [];
+          var data = vendor.data() as Map<String, dynamic>;
+
+          var name = data['name'] ?? 'Unnamed';
+          var location = data['location'] ?? 'Unknown';
+          var contact = data['contact'] ?? 'N/A';
+          var timings = data['timings'] ?? 'N/A';
+          var menu = data['menu'] ?? [];
+          var hygieneScore = data.containsKey('avg_hygiene_score')
+              ? (data['avg_hygiene_score']?.toDouble() ?? 0.0)
+              : 0.0;
 
           return SingleChildScrollView(
             child: Padding(
@@ -28,7 +33,8 @@ class VendorProfilePage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(name, style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
-                  Text("📍 $location\n📞 $contact\n🕘 $timings\n"),
+                  Text("📍 $location\n📞 $contact\n🕘 $timings"),
+                  Text("🧼 Hygiene Score: ${hygieneScore.toStringAsFixed(1)}"),
                   Divider(),
 
                   // ⭐ Filter Reviews
@@ -36,10 +42,14 @@ class VendorProfilePage extends StatelessWidget {
 
                   Divider(),
                   Text("Menu & Best Sellers", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-                  ...menu.map<Widget>((item) => ListTile(
-                    title: Text(item['name']),
-                    trailing: Text("₹${item['price']}"),
-                  )),
+                  ...menu.map<Widget>((item) {
+                    var itemName = item['name'] ?? 'Unnamed';
+                    var itemPrice = item['price'] != null ? "₹${item['price']}" : 'N/A';
+                    return ListTile(
+                      title: Text(itemName),
+                      trailing: Text(itemPrice),
+                    );
+                  }),
 
                   SizedBox(height: 20),
                   ElevatedButton(

@@ -47,7 +47,6 @@ dependencies:
   geolocator: ^14.0.0
   exif: ^3.3.0
   geocoding: ^3.0.0
-  http: ^0.14.0
 
 dev_dependencies:
   flutter_test:
@@ -78,6 +77,7 @@ flutter:
     - assets/images/chal_bhidu.png
     - assets/images/train.png
     - assets/mumbai_vendors_50.json
+    - assets/mumbai_vendors_50_updated.json
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

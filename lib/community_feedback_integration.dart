@@ -10,6 +10,19 @@ class CommunityFeedbackIntegration extends StatefulWidget {
 class _CommunityFeedbackIntegrationState extends State<CommunityFeedbackIntegration> {
   String searchQuery = '';
 
+  Color getStatusColor(String status) {
+    switch (status.toLowerCase()) {
+      case 'green':
+        return Colors.green;
+      case 'orange':
+        return Colors.orange;
+      case 'red':
+        return Colors.red;
+      default:
+        return Colors.grey;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,17 +54,31 @@ class _CommunityFeedbackIntegrationState extends State<CommunityFeedbackIntegrat
 
                 return ListView(
                   children: filteredDocs.map((doc) {
-                    double rating = doc['rating'] ?? 0.0;
+                    double rating = doc['rating']?.toDouble() ?? 0.0;
                     String name = doc['name'];
                     String location = doc['location'];
                     String contact = doc['contact'];
                     String timings = doc['timings'];
                     int reviewsInLastHour = doc['recentReviewCount'] ?? 0;
+                    double hygieneScore = doc['avg_hygiene_score']?.toDouble() ?? 0.0;
+                    String status = doc['status'] ?? 'unknown';
+
+                    List<dynamic> menuItems = doc['menu'] ?? [];
 
                     return Card(
                       margin: EdgeInsets.all(8),
                       child: ListTile(
-                        title: Text(name, style: TextStyle(fontWeight: FontWeight.bold)),
+                        contentPadding: EdgeInsets.all(12),
+                        title: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(name, style: TextStyle(fontWeight: FontWeight.bold)),
+                            CircleAvatar(
+                              radius: 6,
+                              backgroundColor: getStatusColor(status),
+                            ),
+                          ],
+                        ),
                         subtitle: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -60,9 +87,19 @@ class _CommunityFeedbackIntegrationState extends State<CommunityFeedbackIntegrat
                                 return Icon(Icons.star, size: 20, color: index < rating.round() ? Colors.amber : Colors.grey);
                               }),
                             ),
+                            SizedBox(height: 4),
                             Text("📍 $location"),
                             Text("📞 $contact"),
                             Text("🕘 $timings"),
+                            Text("🧼 Hygiene Score: ${hygieneScore.toStringAsFixed(1)}"),
+                            if (menuItems.isNotEmpty)
+                              Padding(
+                                padding: const EdgeInsets.only(top: 4.0),
+                                child: Text(
+                                  "🍽 Menu: ${menuItems.map((item) => item['name']).take(3).join(', ')}...",
+                                  style: TextStyle(color: Colors.grey[700]),
+                                ),
+                              ),
                             if (reviewsInLastHour >= 2)
                               Container(
                                 margin: EdgeInsets.only(top: 5),
