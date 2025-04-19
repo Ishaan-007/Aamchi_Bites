@@ -13,13 +13,11 @@ class VendorSignUpPage extends StatefulWidget {
 }
 
 class _VendorSignUpPageState extends State<VendorSignUpPage> {
+  final Color themeColor = const Color(0xFFF2A43D);
   bool _isLogin = false;
 
-  // Shared controllers
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
-
-  // Signup-specific controllers
   final _vendorNameController = TextEditingController();
   final _cityController = TextEditingController();
   final _contactController = TextEditingController();
@@ -90,27 +88,19 @@ class _VendorSignUpPageState extends State<VendorSignUpPage> {
       List<Placemark> places = await placemarkFromCoordinates(lat, lon);
       if (places.isNotEmpty) {
         final p = places.first;
-        final subThoroughfare = p.subThoroughfare ?? '';
-        final thoroughfare = p.thoroughfare ?? '';
-        final subLocality = p.subLocality ?? '';
-        final locality = p.locality ?? '';
-        final subAdminArea = p.subAdministrativeArea ?? '';
-        final adminArea = p.administrativeArea ?? '';
-        final country = p.country ?? '';
         final parts = [
-          if (subThoroughfare.isNotEmpty) subThoroughfare,
-          if (thoroughfare.isNotEmpty) thoroughfare,
-          if (subLocality.isNotEmpty) subLocality,
-          if (locality.isNotEmpty) locality,
-          if (subAdminArea.isNotEmpty) subAdminArea,
-          if (adminArea.isNotEmpty) adminArea,
-          if (country.isNotEmpty) country,
-        ];
+          p.subThoroughfare,
+          p.thoroughfare,
+          p.subLocality,
+          p.locality,
+          p.subAdministrativeArea,
+          p.administrativeArea,
+          p.country,
+        ].whereType<String>().where((part) => part.isNotEmpty).toList();
         setState(() {
           _locationName = parts.join(', ');
           _response = 'Resolved location.';
         });
-        print('Resolved address: $_locationName');
       } else {
         setState(() => _response = 'No placemark found.');
       }
@@ -127,34 +117,22 @@ class _VendorSignUpPageState extends State<VendorSignUpPage> {
   }
 
   Future<void> _authenticate() async {
-    if (_isLogin) {
-      try {
+    try {
+      if (_isLogin) {
         await FirebaseAuth.instance.signInWithEmailAndPassword(
           email: _emailController.text,
           password: _passwordController.text,
         );
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(builder: (_) => VendorHomePage()),
-        );
-      } catch (e) {
-        setState(() => _response = 'Login error: $e');
-      }
-    } else {
-      try {
-        final cred = await FirebaseAuth.instance
-            .createUserWithEmailAndPassword(
+      } else {
+        final cred = await FirebaseAuth.instance.createUserWithEmailAndPassword(
           email: _emailController.text,
           password: _passwordController.text,
         );
         await _saveVendorData(cred.user!.uid);
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(builder: (_) => VendorHomePage()),
-        );
-      } catch (e) {
-        setState(() => _response = 'Signup error: $e');
       }
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => VendorHomePage()));
+    } catch (e) {
+      setState(() => _response = '${_isLogin ? 'Login' : 'Signup'} error: $e');
     }
   }
 
@@ -162,7 +140,6 @@ class _VendorSignUpPageState extends State<VendorSignUpPage> {
     final col = FirebaseFirestore.instance.collection('vendors');
     final query = await col.where('user_id', isEqualTo: uid).get();
 
-    // Build menu list
     final menu = _menuItems.map((item) {
       final price = double.tryParse(item.priceController.text);
       return {
@@ -196,6 +173,7 @@ class _VendorSignUpPageState extends State<VendorSignUpPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(_isLogin ? 'Vendor Login' : 'Vendor Sign Up'),
+        backgroundColor: themeColor,
         actions: [
           TextButton(
             onPressed: _toggleMode,
@@ -211,90 +189,62 @@ class _VendorSignUpPageState extends State<VendorSignUpPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            TextField(
-              controller: _emailController,
-              decoration: InputDecoration(labelText: 'Email'),
-            ),
-            SizedBox(height: 8),
-            TextField(
-              controller: _passwordController,
-              decoration: InputDecoration(labelText: 'Password'),
-              obscureText: true,
-            ),
+            _buildTextField(_emailController, 'Email'),
+            _buildTextField(_passwordController, 'Password', obscure: true),
             if (!_isLogin) ...[
-              SizedBox(height: 16),
-              TextField(
-                controller: _vendorNameController,
-                decoration: InputDecoration(labelText: 'Vendor Name'),
+              _buildTextField(_vendorNameController, 'Vendor Name'),
+              _buildTextField(_cityController, 'City'),
+              _buildTextField(_contactController, 'Contact'),
+              _buildTextField(_timingsController, 'Timings'),
+              _spacer(),
+              ElevatedButton(
+                style: _elevatedStyle(),
+                onPressed: _pickImage,
+                child: Text('Pick Shop Image'),
               ),
-              SizedBox(height: 8),
-              TextField(
-                controller: _cityController,
-                decoration: InputDecoration(labelText: 'City'),
-              ),
-              SizedBox(height: 8),
-              TextField(
-                controller: _contactController,
-                decoration: InputDecoration(labelText: 'Contact'),
-              ),
-              SizedBox(height: 16),
-              ElevatedButton(onPressed: _pickImage, child: Text('Pick Shop Image')),
               if (_image != null) ...[
-                SizedBox(height: 8),
+                _spacer(),
                 Image.file(_image!, height: 150),
               ],
-              SizedBox(height: 16),
+              _spacer(),
               ElevatedButton(
+                style: _elevatedStyle(),
                 onPressed: _getCurrentLocation,
                 child: Text('Fetch Current Location'),
               ),
               if (_locationName != null) ...[
-                SizedBox(height: 8),
-                Text('Location: $_locationName'),
+                _spacer(8),
+                Text('Location: $_locationName', style: TextStyle(color: Colors.grey[700])),
               ],
-              SizedBox(height: 16),
-              TextField(
-                controller: _timingsController,
-                decoration: InputDecoration(labelText: 'Timings'),
-              ),
-              SizedBox(height: 16),
-              Text('Menu Items:', style: TextStyle(fontWeight: FontWeight.bold)),
+              _spacer(),
+              Text('Menu Items:', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
               ..._menuItems.map((item) => Row(
                     children: [
-                      Expanded(
-                        child: TextField(
-                          controller: item.nameController,
-                          decoration: InputDecoration(labelText: 'Item Name'),
-                        ),
-                      ),
+                      Expanded(child: _buildTextField(item.nameController, 'Item Name')),
                       SizedBox(width: 8),
                       Expanded(
-                        child: TextField(
-                          controller: item.priceController,
-                          decoration: InputDecoration(labelText: 'Price'),
-                          keyboardType: TextInputType.number,
-                        ),
+                        child: _buildTextField(item.priceController, 'Price', inputType: TextInputType.number),
                       ),
                       IconButton(
-                        icon: Icon(Icons.delete),
-                        onPressed: () {
-                          setState(() {
-                            _menuItems.remove(item);
-                          });
-                        },
+                        icon: Icon(Icons.delete, color: themeColor),
+                        onPressed: () => setState(() => _menuItems.remove(item)),
                       )
                     ],
                   )),
               TextButton.icon(
                 onPressed: () => setState(() => _menuItems.add(_MenuItem())),
-                icon: Icon(Icons.add),
-                label: Text('Add Menu Item'),
+                icon: Icon(Icons.add, color: themeColor),
+                label: Text('Add Menu Item', style: TextStyle(color: themeColor)),
               ),
             ],
-            SizedBox(height: 24),
-            ElevatedButton(onPressed: _authenticate, child: Text(_isLogin ? 'Login' : 'Sign Up')),
+            _spacer(24),
+            ElevatedButton(
+              style: _elevatedStyle(),
+              onPressed: _authenticate,
+              child: Text(_isLogin ? 'Login' : 'Sign Up'),
+            ),
             if (_response.isNotEmpty) ...[
-              SizedBox(height: 16),
+              _spacer(),
               Text(
                 _response,
                 style: TextStyle(color: Colors.red),
@@ -306,6 +256,35 @@ class _VendorSignUpPageState extends State<VendorSignUpPage> {
       ),
     );
   }
+
+  Widget _buildTextField(TextEditingController controller, String label,
+      {bool obscure = false, TextInputType inputType = TextInputType.text}) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8),
+      child: TextField(
+        controller: controller,
+        obscureText: obscure,
+        keyboardType: inputType,
+        decoration: InputDecoration(
+          labelText: label,
+          border: OutlineInputBorder(),
+          focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: themeColor, width: 2),
+          ),
+        ),
+      ),
+    );
+  }
+
+  ButtonStyle _elevatedStyle() {
+    return ElevatedButton.styleFrom(
+      backgroundColor: themeColor,
+      foregroundColor: Colors.white,
+      padding: EdgeInsets.symmetric(vertical: 12),
+    );
+  }
+
+  Widget _spacer([double height = 16]) => SizedBox(height: height);
 }
 
 class _MenuItem {
