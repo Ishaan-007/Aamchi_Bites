@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Khana Khazaana', // 🍲 Updated title
-      home: FoodPlaceScreen(),      // App starts with Sign Up
+      home: WelcomePage(),      // App starts with Sign Up
       debugShowCheckedModeBanner: false,
     );
   }

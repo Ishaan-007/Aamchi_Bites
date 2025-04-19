@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:street_food_app/community_feedback_integration.dart';
-import 'package:street_food_app/food_category_card.dart';// Assuming this exists
+import 'package:street_food_app/flavour_passport_profile.dart';
+import 'package:street_food_app/food_category_card.dart';
+import 'package:street_food_app/food_place_screen.dart';
+import 'package:street_food_app/optimized_route_map.dart';// Assuming this exists
 
 class HomePage extends StatelessWidget {
   final String email;
@@ -97,7 +100,9 @@ class HomePage extends StatelessWidget {
                       children: [
                         IconButton(
                           icon: const Icon(Icons.account_circle_rounded, size: 30),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (_) => FlavorPassportProfile(email: email,)));
+                          },
                         ),
                         const SizedBox(height: 10),
                         Image.asset(
@@ -120,12 +125,12 @@ class HomePage extends StatelessWidget {
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 padding: const EdgeInsets.symmetric(horizontal: 16),
-               children: const [
-  FoodCategoryCard(title: "Must try first", icon: Icons.star),
+               children:  [
+  FoodCategoryCard(title: "Must try first", icon: Icons.star, route: OSMOptimizedRouteMap(),),
   SizedBox(width: 12),
-  FoodCategoryCard(title: "Specially for you", icon: Icons.lightbulb),
+  FoodCategoryCard(title: "Specially for you", icon: Icons.lightbulb, route: FoodPlaceScreen(),),
   SizedBox(width: 12),
-  FoodCategoryCard(title: "Safe & Clean", icon: Icons.handshake),
+  FoodCategoryCard(title: "Safe & Clean", icon: Icons.handshake, route: OSMOptimizedRouteMap(),),
 ],
 
               ),

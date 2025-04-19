@@ -1,48 +1,78 @@
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class FlavorPassportProfile extends StatefulWidget {
-  const FlavorPassportProfile({Key? key}) : super(key: key);
+  final String email;
+
+  const FlavorPassportProfile({Key? key, required this.email}) : super(key: key);
 
   @override
   State<FlavorPassportProfile> createState() => _FlavorPassportProfileState();
 }
 
 class _FlavorPassportProfileState extends State<FlavorPassportProfile> {
-  // Selected food personality type
-  String selectedPersonality = 'Spice Master';
+  late Future<Map<String, dynamic>?> userDataFuture;
 
-  // Function to handle personality selection
-  void selectPersonality(String personality) {
-    setState(() {
-      selectedPersonality = personality;
-    });
+  @override
+  void initState() {
+    super.initState();
+    userDataFuture = fetchUserData(widget.email);
+  }
+
+  Future<Map<String, dynamic>?> fetchUserData(String email) async {
+    final query = await FirebaseFirestore.instance
+        .collection('user')
+        .where('email', isEqualTo: email)
+        .get();
+
+    if (query.docs.isNotEmpty) {
+      return query.docs.first.data();
+    } else {
+      return null;
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [
-              Color(0xFFEF8D32), // Top orange
-              Color(0xFFFFCA7A), // Middle yellow-orange
-              Color(0xFFFFECB3), // Bottom light yellow
-            ],
-          ),
-        ),
-        child: SafeArea(
-          child: SingleChildScrollView(
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: ConstrainedBox(
-                constraints: const BoxConstraints(maxWidth: 500),
+      body: FutureBuilder<Map<String, dynamic>?>(
+        future: userDataFuture,
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const Center(child: CircularProgressIndicator());
+          }
+
+          if (!snapshot.hasData || snapshot.data == null) {
+            return const Center(child: Text('User not found.'));
+          }
+
+          final user = snapshot.data!;
+          print(user);
+          final name = user['name'];
+          final location = user['location'] ?? 'Unknown';
+          final personality = user['personality'] ?? 'Spice Master';
+          final imageUrl = user['imageUrl'] ?? 'https://i.pravatar.cc/150?img=23';
+          final isSpicy = user['spicy'] == 1;
+          final foodPreference = user['food_type_preference'] ?? 'Not specified';
+
+          return Container(
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  Color(0xFFEF8D32),
+                  Color(0xFFFFCA7A),
+                  Color(0xFFFFECB3),
+                ],
+              ),
+            ),
+            child: SafeArea(
+              child: SingleChildScrollView(
+                padding: const EdgeInsets.all(16.0),
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Profile header section
+                    // Profile Card
                     Container(
                       padding: const EdgeInsets.all(16),
                       decoration: BoxDecoration(
@@ -51,107 +81,73 @@ class _FlavorPassportProfileState extends State<FlavorPassportProfile> {
                       ),
                       child: Column(
                         children: [
-                          // Profile info and menu
                           Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              // Profile picture and name
+                              CircleAvatar(
+                                radius: 30,
+                                backgroundColor: Colors.white,
+                                backgroundImage: NetworkImage(imageUrl),
+                              ),
+                              const SizedBox(width: 12),
                               Expanded(
-                                child: Row(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    const CircleAvatar(
-                                      radius: 30,
-                                      backgroundColor: Colors.white,
-                                      child: ClipOval(
-                                        child: Image(
-                                          image: NetworkImage('https://a.storyblok.com/f/202591/702x473/a064611e1c/network-images-on-the-web-platform.png/m/3072x2098/filters:format(webp):quality(90)'),
-                                          width: 60,
-                                          height: 60,
-                                          fit: BoxFit.cover,
-                                        ),
+                                    Text(
+                                      name,
+                                      style: const TextStyle(
+                                        fontSize: 24,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.black87,
                                       ),
                                     ),
-                                    const SizedBox(width: 12),
-                                    Expanded(
-                                      child: Column(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                        children: const [
-                                          Text(
-                                            'Priya',
-                                            style: TextStyle(
-                                              fontSize: 24,
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black87,
-                                            ),
-                                            overflow: TextOverflow.ellipsis,
-                                          ),
-                                          Text(
-                                            'Hey, Priya! Here\'s your Flavor Passport',
-                                            style: TextStyle(
-                                              fontSize: 14,
-                                              color: Colors.black87,
-                                            ),
-                                            overflow: TextOverflow.ellipsis,
-                                            maxLines: 2,
-                                          ),
-                                        ],
-                                      ),
+                                    Text(
+                                      "Hey, $name! Here's your Flavor Passport",
+                                      style: const TextStyle(fontSize: 14, color: Colors.black87),
                                     ),
                                   ],
                                 ),
                               ),
-                              // Menu button
                               IconButton(
-                                icon: const Icon(
-                                  Icons.menu,
-                                  size: 28,
-                                  color: Colors.black87,
-                                ),
-                                onPressed: () {
-                                  // Show menu functionality
-                                  ScaffoldMessenger.of(context).showSnackBar(
-                                    const SnackBar(content: Text('Menu pressed')),
-                                  );
-                                },
+                                icon: const Icon(Icons.menu, color: Colors.black87),
+                                onPressed: () {},
                               ),
                             ],
                           ),
                           const SizedBox(height: 16),
-                          // Location info
                           Row(
-                            children: const [
-                              Icon(Icons.location_on, color: Colors.black87, size: 20),
-                              SizedBox(width: 8),
+                            children: [
+                              const Icon(Icons.location_on, color: Colors.black87, size: 20),
+                              const SizedBox(width: 8),
                               Expanded(
                                 child: Text(
-                                  'Exploring from: Bandra, Mumbai',
-                                  style: TextStyle(
+                                  'Exploring from: $location',
+                                  style: const TextStyle(
                                     fontSize: 16,
                                     fontWeight: FontWeight.w500,
                                     color: Colors.black87,
                                   ),
-                                  overflow: TextOverflow.ellipsis,
                                 ),
                               ),
                             ],
                           ),
                           const SizedBox(height: 16),
-                          // Personality type selection
                           Wrap(
                             spacing: 8,
                             runSpacing: 8,
                             alignment: WrapAlignment.center,
                             children: [
-                              _buildPersonalityButton('Spice Master'),
-                              _buildPersonalityButton('Clean Bite Seeker'),
-                              _buildPersonalityButton('Foodie Scout'),
+                              _buildPersonalityButton(personality, personality),
+                              _buildPersonalityButton('Clean Bite Seeker', personality),
+                              _buildPersonalityButton('Foodie Scout', personality),
                             ],
                           ),
                         ],
                       ),
                     ),
                     const SizedBox(height: 16),
-                    // Food preferences grid
+
+                    // Preference Cards
                     GridView.count(
                       crossAxisCount: 2,
                       mainAxisSpacing: 12,
@@ -160,194 +156,95 @@ class _FlavorPassportProfileState extends State<FlavorPassportProfile> {
                       physics: const NeverScrollableScrollPhysics(),
                       childAspectRatio: 1.2,
                       children: [
-                        // Spice Tolerance Card
                         _buildPreferenceCard(
-                          icon: Icons.whatshot,
-                          iconColor: Colors.deepOrange,
-                          title: 'Spice Tolerance',
-                          content: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Container(
-                                height: 12,
-                                decoration: BoxDecoration(
-                                  gradient: const LinearGradient(
-                                    colors: [Colors.deepOrange, Colors.orange, Colors.amber],
-                                  ),
-                                  borderRadius: BorderRadius.circular(6),
-                                ),
-                              ),
-                              const SizedBox(height: 8),
-                              const Text(
-                                'Firestarter',
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                            ],
-                          ),
+                          icon: Icons.local_fire_department,
+                          iconColor: isSpicy ? Colors.red : Colors.grey,
+                          title: 'Spicy Food',
+                          content: isSpicy
+                              ? const Text("Loves the heat 🌶")
+                              : const Text("Prefers mild flavors"),
                         ),
-                        // Diet Type Card
+                        _buildPreferenceCard(
+                          icon: Icons.restaurant_menu,
+                          iconColor: Colors.deepPurple,
+                          title: 'Food Type Preference',
+                          content: Text(foodPreference),
+                        ),
                         _buildPreferenceCard(
                           icon: Icons.eco,
                           iconColor: Colors.green,
-                          title: 'Diet Type',
-                          content: const Center(
-                            child: Text(
-                              'Vegetarian',
-                              style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
-                              ),
-                              textAlign: TextAlign.center,
-                            ),
-                          ),
+                          title: 'Vegan',
+                          content: Text(user['vegan'] == 1 ? 'Yes' : 'No'),
                         ),
-                        // Salty/Umami Card
                         _buildPreferenceCard(
-                          icon: Icons.waves,
-                          iconColor: Colors.orange,
-                          title: 'Salty / Umami',
-                          content: const FittedBox(
-                            fit: BoxFit.scaleDown,
-                            child: Text(
-                              'Indian,\nIndo-Chinese',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                        ),
-                        // Favorite Cuisines Card
-                        _buildPreferenceCard(
-                          icon: Icons.restaurant,
-                          iconColor: Colors.orange,
-                          title: 'Favorite Cuisines',
-                          content: const FittedBox(
-                            fit: BoxFit.scaleDown,
-                            child: Text(
-                              'Indian, Indo-Chinese',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 16),
-                    // Insights & Preferences section
-                    const Text(
-                      'Insights & Preferences',
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black87,
-                      ),
-                    ),
-                    const SizedBox(height: 12),
-                    // Insights row
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        // Most Tried Dishes
-                        _buildInsightItem(
-                          icon: Icons.dinner_dining,
-                          iconColor: Colors.brown,
-                          title: 'Most Tried\nDishes',
-                          value: 'Vada Pav, Misal Pav',
-                        ),
-                        // Areas Explored
-                        _buildInsightItem(
-                          icon: Icons.place,
-                          iconColor: Colors.orange,
-                          title: 'Areas\nExplored',
-                          value: 'South Mumbai',
-                        ),
-                        // Preferred Time
-                        _buildInsightItem(
-                          icon: Icons.nightlight,
+                          icon: Icons.no_food,
                           iconColor: Colors.blueGrey,
-                          title: 'Preferred\nTime',
-                          value: 'Night Snacker',
+                          title: 'Gluten Free',
+                          content: Text(user['gluten_free'] == 1 ? 'Yes' : 'No'),
+                        ),
+                        _buildPreferenceCard(
+                          icon: Icons.icecream,
+                          iconColor: Colors.purple,
+                          title: 'Lactose Free',
+                          content: Text(user['lactose_free'] == 1 ? 'Yes' : 'No'),
+                        ),
+                        _buildPreferenceCard(
+                          icon: Icons.health_and_safety,
+                          iconColor: Colors.pink,
+                          title: 'Health Sensitivity',
+                          content: Text(
+                            (user['health_sensitivity'] as num).toStringAsFixed(2),
+                          ),
+                        ),
+                        _buildPreferenceCard(
+                          icon: Icons.verified,
+                          iconColor: Colors.teal,
+                          title: 'High Hygiene',
+                          content: Text(user['prefers_high_hygiene'] == 1 ? 'Yes' : 'No'),
+                        ),
+                        _buildPreferenceCard(
+                          icon: Icons.emoji_food_beverage,
+                          iconColor: Colors.amber,
+                          title: 'Ingredient Quality',
+                          content: Text(user['prefers_high_ingredient_quality'] == 1 ? 'Yes' : 'No'),
+                        ),
+                        _buildPreferenceCard(
+                          icon: Icons.local_dining,
+                          iconColor: Colors.brown,
+                          title: 'Max Calories',
+                          content: Text('${user['max_calories']} kcal'),
                         ),
                       ],
                     ),
-                    const SizedBox(height: 20),
-                    // Update profile button
-                    GestureDetector(
-                      onTap: () {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(content: Text('Update Profile pressed')),
-                        );
-                      },
-                      child: Container(
-                        width: double.infinity,
-                        padding: const EdgeInsets.symmetric(vertical: 16),
-                        decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(0.8),
-                          borderRadius: BorderRadius.circular(16),
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
-                            Icon(Icons.edit, color: Colors.black87),
-                            SizedBox(width: 10),
-                            Text(
-                              'Update My Flavor Profile',
-                              style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black87,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    const SizedBox(height: 16),
                   ],
                 ),
               ),
             ),
-          ),
+          );
+        },
+      ),
+    );
+  }
+
+  Widget _buildPersonalityButton(String text, String selected) {
+    final isSelected = text == selected;
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+      decoration: BoxDecoration(
+        color: isSelected ? Colors.white : Colors.white54,
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(color: Colors.black26),
+      ),
+      child: Text(
+        text,
+        style: TextStyle(
+          fontWeight: FontWeight.w500,
+          color: isSelected ? Colors.deepOrange : Colors.black87,
         ),
       ),
     );
   }
 
-  // Helper widget for personality selection buttons
-  Widget _buildPersonalityButton(String label) {
-    final isSelected = selectedPersonality == label;
-    
-    return GestureDetector(
-      onTap: () => selectPersonality(label),
-      child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-        decoration: BoxDecoration(
-          color: isSelected ? Colors.amber.shade800 : Colors.amber.shade200,
-          borderRadius: BorderRadius.circular(20),
-          border: isSelected ? Border.all(color: Colors.white, width: 2) : null,
-        ),
-        child: Text(
-          label,
-          style: TextStyle(
-            fontSize: 14,
-            fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
-            color: isSelected ? Colors.white : Colors.black87,
-          ),
-        ),
-      ),
-    );
-  }
-
-  // Helper widget for preference cards
   Widget _buildPreferenceCard({
     required IconData icon,
     required Color iconColor,
@@ -357,72 +254,27 @@ class _FlavorPassportProfileState extends State<FlavorPassportProfile> {
     return Container(
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: const Color(0xFFFEE9C3),
+        color: Colors.white.withOpacity(0.9),
         borderRadius: BorderRadius.circular(16),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black26,
+            blurRadius: 6,
+            offset: Offset(2, 2),
+          ),
+        ],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
-            children: [
-              Icon(icon, color: iconColor, size: 20),
-              const SizedBox(width: 6),
-              Expanded(
-                child: Text(
-                  title,
-                  style: const TextStyle(
-                    fontSize: 13,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black87,
-                  ),
-                  overflow: TextOverflow.ellipsis,
-                ),
-              ),
-            ],
-          ),
-          const Spacer(),
-          content,
-          const Spacer(),
-        ],
-      ),
-    );
-  }
-
-  // Helper widget for insight items
-  Widget _buildInsightItem({
-    required IconData icon,
-    required Color iconColor,
-    required String title,
-    required String value,
-  }) {
-    return Expanded(
-      child: Column(
-        children: [
-          Container(
-            padding: const EdgeInsets.all(8),
-            decoration: BoxDecoration(
-              color: Colors.orange.withOpacity(0.3),
-              shape: BoxShape.circle,
-            ),
-            child: Icon(icon, size: 24, color: iconColor),
-          ),
-          const SizedBox(height: 6),
+          Icon(icon, color: iconColor, size: 28),
+          const SizedBox(height: 8),
           Text(
             title,
-            textAlign: TextAlign.center,
-            style: const TextStyle(
-              fontSize: 14,
-              fontWeight: FontWeight.bold,
-            ),
+            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
           ),
           const SizedBox(height: 4),
-          Text(
-            value,
-            textAlign: TextAlign.center,
-            style: const TextStyle(fontSize: 12),
-            overflow: TextOverflow.ellipsis,
-            maxLines: 2,
-          ),
+          content,
         ],
       ),
     );

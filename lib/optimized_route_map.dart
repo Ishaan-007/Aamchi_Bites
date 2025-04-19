@@ -4,7 +4,7 @@ import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:http/http.dart' as http;
 
-void main() => runApp(MaterialApp(home: OSMOptimizedRouteMap()));
+//void main() => runApp(MaterialApp(home: OSMOptimizedRouteMap()));
 
 class OSMOptimizedRouteMap extends StatefulWidget {
   @override
@@ -65,7 +65,7 @@ class _OSMOptimizedRouteMapState extends State<OSMOptimizedRouteMap> {
       print('Failed to load route from OSRM');
     }
   }
-
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
