@@ -24,7 +24,7 @@ class _LoginPageState extends State<LoginPage> {
         );
 
         Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (_) => MainPage()));
+            context, MaterialPageRoute(builder: (_) => HomePage(email: emailController.text.trim(),)));
       } catch (e) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(

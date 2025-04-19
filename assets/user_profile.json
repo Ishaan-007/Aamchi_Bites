@@ -1,0 +1,41 @@
+[
+    {
+      "email": "lalita.dhavale23@spit.ac.in",
+      "name": "Lalita Dhavale",
+      "vegan": 0,
+      "gluten_free": 1,
+      "lactose_free": 1,
+      "spicy": 0,
+      "health_sensitivity": 0.9,
+      "prefers_high_hygiene": 1,
+      "prefers_high_ingredient_quality": 1,
+      "max_calories": 450,
+      "food_type_preference": "chaat"
+    },
+    {
+      "email": "soham.kher23@spit.ac.in",
+      "name": "Soham Kher",
+      "vegan": 0,
+      "gluten_free": 0,
+      "lactose_free": 0,
+      "spicy": 1,
+      "health_sensitivity": 0.4,
+      "prefers_high_hygiene": 0,
+      "prefers_high_ingredient_quality": 1,
+      "max_calories": 700,
+      "food_type_preference": "frankie"
+    },
+    {
+      "email": "ishaansc2017@gmail.com",
+      "name": "Ishaan Shah",
+      "vegan": 1,
+      "gluten_free": 1,
+      "lactose_free": 1,
+      "spicy": 0,
+      "health_sensitivity": 0.95,
+      "prefers_high_hygiene": 1,
+      "prefers_high_ingredient_quality": 1,
+      "max_calories": 500,
+      "food_type_preference": "salad"
+    }
+  ]

@@ -76,8 +76,11 @@ flutter:
     - assets/images/aamchi_bites.png
     - assets/images/chal_bhidu.png
     - assets/images/train.png
+    - assets/images/title.png
+    - assets/images/mumbai.png
     - assets/mumbai_vendors_50.json
     - assets/mumbai_vendors_50_updated.json
+    - assets/user_profile.json
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

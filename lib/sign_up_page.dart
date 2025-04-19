@@ -4,6 +4,7 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:street_food_app/main_page.dart';
 import 'package:street_food_app/login_page.dart';
+import 'package:street_food_app/user_preferences_form.dart';
 
 class SignUpPage extends StatefulWidget {
   @override
@@ -43,7 +44,7 @@ class _SignUpPageState extends State<SignUpPage> {
         });
 
         Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (_) => MainPage()));
+            context, MaterialPageRoute(builder: (_) => UserPreferencesForm(email: emailController.text.trim(), name: "Ishaan",)));
       } catch (e) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(

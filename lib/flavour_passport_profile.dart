@@ -64,7 +64,7 @@ class _FlavorPassportProfileState extends State<FlavorPassportProfile> {
                                       backgroundColor: Colors.white,
                                       child: ClipOval(
                                         child: Image(
-                                          image: NetworkImage('https://i.pravatar.cc/150?img=23'),
+                                          image: NetworkImage('https://a.storyblok.com/f/202591/702x473/a064611e1c/network-images-on-the-web-platform.png/m/3072x2098/filters:format(webp):quality(90)'),
                                           width: 60,
                                           height: 60,
                                           fit: BoxFit.cover,
