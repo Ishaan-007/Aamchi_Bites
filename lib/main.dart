@@ -4,7 +4,9 @@ import 'package:street_food_app/aamchi_bites_app.dart';
 import 'package:street_food_app/chat_screen.dart';
 import 'package:street_food_app/community_feedback_integration.dart';
 import 'package:street_food_app/flavour_passport_profile.dart';
+import 'package:street_food_app/food_place_screen.dart';
 import 'package:street_food_app/main_page.dart';
+import 'package:street_food_app/optimized_route_map.dart';
 import 'package:street_food_app/recommendation_screen.dart';
 import 'package:street_food_app/sign_up_page.dart';
 import 'package:street_food_app/upload_users_to_firestore.dart';
@@ -22,7 +24,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Khana Khazaana', // 🍲 Updated title
-      home: WelcomePage(),      // App starts with Sign Up
+      home: FoodPlaceScreen(),      // App starts with Sign Up
       debugShowCheckedModeBanner: false,
     );
   }

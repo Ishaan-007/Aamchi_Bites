@@ -1,0 +1,51 @@
+vendor_name,hygiene_score,ingredient_quality,vegan,gluten_free,lactose_free,spicy,average_cost,calories,water_safe,food_type
+The Frankie House Thane,88,51,0,1,1,1,78,360,0,chaat
+Bombay Sandwich Thane,78,69,1,0,1,0,55,779,1,momos
+Street Curry Borivali,64,77,0,0,0,0,38,597,0,chaat
+Mumbai Bites Borivali,92,96,1,0,1,0,86,476,0,momos
+Dosa Delights Mulund,57,56,1,0,0,1,38,703,1,momos
+Shiv Vada Pav Andheri,70,93,1,0,0,1,39,591,0,sandwich/frankie
+Shiv Vada Pav Ghatkopar,88,57,0,1,1,1,90,334,1,momos
+Dosa Delights Dadar,68,96,0,1,0,1,71,394,1,sandwich/frankie
+Dosa Delights Borivali,72,84,0,1,0,0,52,600,0,momos
+Spicy Tandoor Andheri,60,63,0,0,0,0,59,232,1,fried snacks
+Bombay Sandwich Thane,60,66,1,0,0,1,58,659,0,fried snacks
+Mumbai Bites Thane,73,85,0,0,1,0,20,669,1,fried snacks
+The Frankie House Kurla,85,99,0,1,0,0,30,574,1,momos
+Mumbai Bites Thane,89,89,0,0,1,0,76,221,0,sandwich/frankie
+Dosa Delights Mulund,73,53,0,0,0,1,69,237,1,sandwich/frankie
+Mumbai Bites Vile Parle,52,51,0,1,0,1,42,429,1,momos
+Rolls Mania Mulund,71,55,1,0,0,0,50,564,1,fried snacks
+Street Curry Thane,51,91,0,1,0,1,61,762,1,fried snacks
+Street Curry Chembur,73,53,1,1,1,1,26,637,1,sandwich/frankie
+Chaat Junction Thane,93,78,0,1,1,1,35,482,0,fried snacks
+Street Curry Ghatkopar,79,67,1,0,0,1,79,226,1,chaat
+Bombay Sandwich Chembur,87,75,0,0,0,1,21,425,0,sandwich/frankie
+Bombay Sandwich Mulund,51,93,0,0,1,0,20,476,1,fried snacks
+Rolls Mania Dadar,70,83,1,0,0,1,67,483,0,sandwich/frankie
+Biryani Adda Vile Parle,82,59,1,0,0,0,31,680,0,chaat
+Shiv Vada Pav Thane,61,85,1,0,0,0,88,652,1,sandwich/frankie
+Mumbai Bites Andheri,71,63,0,0,1,1,56,715,1,sandwich/frankie
+Rolls Mania Chembur,93,80,1,1,1,0,51,746,1,sandwich/frankie
+Dosa Delights Chembur,74,97,0,0,1,0,28,391,0,sandwich/frankie
+Mumbai Bites Bhandup,98,64,0,1,0,0,38,248,1,chaat
+Dosa Delights Mulund,76,57,1,0,0,1,67,711,0,momos
+The Frankie House Mulund,91,63,1,0,1,1,99,216,0,sandwich/frankie
+Shiv Vada Pav Chembur,77,72,0,0,1,0,22,371,0,sandwich/frankie
+Spicy Tandoor Ghatkopar,65,89,0,1,1,1,39,419,1,fried snacks
+Spicy Tandoor Andheri,64,70,1,1,1,1,43,357,1,sandwich/frankie
+Shiv Vada Pav Bhandup,96,65,1,1,0,1,73,676,0,fried snacks
+The Frankie House Chembur,93,94,1,1,1,1,52,245,0,momos
+Street Curry Vile Parle,52,67,0,0,0,0,43,572,1,chaat
+Street Curry Dadar,86,96,0,1,1,0,94,717,0,chaat
+Dosa Delights Ghatkopar,56,73,0,0,0,1,91,298,1,momos
+The Frankie House Vile Parle,70,75,0,0,1,1,55,236,0,chaat
+Spicy Tandoor Ghatkopar,58,74,0,1,1,0,57,479,1,momos
+Dosa Delights Thane,88,94,0,1,1,0,44,548,0,momos
+Chaat Junction Vile Parle,67,90,1,1,1,1,37,696,1,momos
+Rolls Mania Thane,53,78,0,1,0,0,85,501,0,chaat
+Dosa Delights Vile Parle,74,64,0,1,1,1,73,380,1,fried snacks
+Chaat Junction Bhandup,63,94,0,1,0,1,54,298,1,momos
+Dosa Delights Chembur,99,50,1,1,0,0,99,315,0,sandwich/frankie
+Street Curry Kurla,58,74,0,1,0,0,80,390,0,chaat
+Bombay Sandwich Borivali,75,56,0,0,0,1,60,452,1,momos
