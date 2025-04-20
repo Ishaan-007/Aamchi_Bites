@@ -1,11 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:street_food_app/optimized_route_map.dart';
 
+import 'package:flutter/material.dart';
+
 class FoodCategoryCard extends StatelessWidget {
   final String title;
   final IconData icon;
   final Widget route;
-  const FoodCategoryCard({super.key, required this.title, required this.icon, required this.route});
+  
+  const FoodCategoryCard({
+    super.key, 
+    required this.title, 
+    required this.icon, 
+    required this.route,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -14,34 +22,60 @@ class FoodCategoryCard extends StatelessWidget {
         Navigator.push(context, MaterialPageRoute(builder: (_) => route));
       },
       child: Container(
-        width: 100,
-        padding: const EdgeInsets.all(12.0),
+        width: 120, // Increased width to better accommodate text
+        height: 140, // Fixed height to ensure consistent sizing
+        padding: const EdgeInsets.symmetric(vertical: 7.0, horizontal: 12.0),
         decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(20),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.05),
-              blurRadius: 5,
-              offset: const Offset(0, 2),
+              color: Colors.black.withOpacity(0.07),
+              blurRadius: 10,
+              spreadRadius: 1,
+              offset: const Offset(0, 3),
             ),
           ],
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [Colors.white, Colors.teal.shade50],
+          ),
+          border: Border.all(
+            color: Colors.teal.withOpacity(0.12),
+            width: 1.5,
+          ),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(
-              icon,
-              color: Colors.teal[600],
-              size: 28,
+            Container(
+              padding: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                color: Colors.teal.withOpacity(0.12),
+                shape: BoxShape.circle,
+              ),
+              child: Icon(
+                icon,
+                color: Colors.teal[700],
+                size: 34, // Slightly adjusted icon size
+              ),
             ),
-            const SizedBox(height: 12),
-            Text(
-              title,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 14,
-                fontWeight: FontWeight.bold,
+            const SizedBox(height: 10),
+            Expanded(
+              child: Center(
+                child: Text(
+                  title,
+                  textAlign: TextAlign.center,
+                  overflow: TextOverflow.ellipsis,
+                  maxLines: 2, // Allow up to two lines for longer titles
+                  style: TextStyle(
+                    fontSize: 17, // Slightly reduced font size for better fit
+                    fontWeight: FontWeight.w700,
+                    letterSpacing: 0.2,
+                    height: 1.2,
+                  ),
+                ),
               ),
             ),
           ],

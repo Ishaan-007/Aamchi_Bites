@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:intl/intl.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -110,19 +111,23 @@ class _VendorHygieneDashboardState extends State<VendorHygieneDashboard> {
   }
 
   List<QueryDocumentSnapshot> _processVendors(List<QueryDocumentSnapshot> vendors) {
-    return vendors
-        .where((v) {
-          String name = (v['name'] ?? '').toString().toLowerCase();
-          String location = (v['location'] ?? '').toString().toLowerCase();
-          return name.contains(_searchQuery) || location.contains(_searchQuery);
-        })
-        .toList()
-      ..sort((a, b) {
-        double aScore = (a['avg_hygiene_score'] ?? 0).toDouble();
-        double bScore = (b['avg_hygiene_score'] ?? 0).toDouble();
-        return bScore.compareTo(aScore);
-      })
-      ..take(_itemCount > 0 ? _itemCount : vendors.length);
+    // Filter first
+    final filtered = vendors.where((v) {
+      String name = (v['name'] ?? '').toString().toLowerCase();
+      String location = (v['location'] ?? '').toString().toLowerCase();
+      return name.contains(_searchQuery) || location.contains(_searchQuery);
+    }).toList();
+
+    // Sort descending
+    filtered.sort((a, b) {
+      double aScore = (a['avg_hygiene_score'] ?? 0).toDouble();
+      double bScore = (b['avg_hygiene_score'] ?? 0).toDouble();
+      return bScore.compareTo(aScore);
+    });
+
+    // Apply count limitation
+    final resultCount = _itemCount > 0 ? _itemCount : filtered.length;
+    return filtered.take(resultCount).toList();
   }
 
   Widget _buildHeatmap(List<QueryDocumentSnapshot> vendors) {

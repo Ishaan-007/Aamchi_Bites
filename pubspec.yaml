@@ -82,7 +82,11 @@ flutter:
     - assets/images/train.png
     - assets/images/title.png
     - assets/images/mumbai.png
-    - assets/images/food_1.png
+    - assets/images/food_1.jpg
+    - assets/images/food_2.png
+    - assets/images/food_3.png
+    - assets/images/food_4.png
+    - assets/images/food_5.jpg
     - assets/mumbai_vendors_50.json
     - assets/mumbai_vendors_50_updated.json
     - assets/user_profile.json
@@ -109,6 +113,10 @@ flutter:
       fonts:
         - asset: assets/fonts/Fredoka/static/Fredoka-Bold.ttf
           weight: 700
+        
+    - family: "PlaywriteAUSA"
+      fonts:
+        - asset: assets/fonts/PlaywriteAUSA-Regular.ttf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
