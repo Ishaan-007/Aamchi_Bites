@@ -51,7 +51,7 @@ class _FlavorPassportProfileState extends State<FlavorPassportProfile> {
           final name = user['name'];
           final location = user['location'] ?? 'Thane';
           final personality = user['personality'] ?? 'Spice Master';
-          final imageUrl = user['imageUrl'] ?? 'https://i.pravatar.cc/150?img=23';
+          final imageUrl = user['imageUrl'] ?? 'https://media.licdn.com/dms/image/v2/D5603AQGDGJ13N1UhkA/profile-displayphoto-shrink_800_800/B56ZVNE5i4GoAg-/0/1740754885805?e=1750896000&v=beta&t=LsenV8tZj__X4XBr_tlx5jRDcXtF7nFDpGAxPOEZhsw';
           final isSpicy = user['spicy'] == 1;
           final foodPreference = user['food_type_preference'] ?? 'Not specified';
 

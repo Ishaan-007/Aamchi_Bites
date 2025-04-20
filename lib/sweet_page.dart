@@ -27,7 +27,8 @@ class SweetPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Sweet Foods")),
+      backgroundColor: Color(0xFFF2A43D),
+      appBar: AppBar(title: Text("Sweet Cravings")),
       body: ListView.builder(
         itemCount: sweetItems.length,
         itemBuilder: (context, index) {

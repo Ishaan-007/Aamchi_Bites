@@ -27,7 +27,8 @@ class SavouryPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Savoury Foods")),
+      backgroundColor: Color(0xFFF2A43D),
+      appBar: AppBar(title: Text("Savory Delights")),
       body: ListView.builder(
         itemCount: savouryItems.length,
         itemBuilder: (context, index) {

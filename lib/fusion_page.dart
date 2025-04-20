@@ -22,7 +22,8 @@ class FusionPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Fusion Foods")),
+      backgroundColor: Color(0xFFF2A43D),
+      appBar: AppBar(title: Text("Fusion Twists")),
       body: ListView.builder(
         itemCount: fusionItems.length,
         itemBuilder: (context, index) {

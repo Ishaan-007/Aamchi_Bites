@@ -28,7 +28,7 @@ class SpicyPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFFF2A43D),
-      appBar: AppBar(title: Text("Spicy Foods")),
+      appBar: AppBar(title: Text("Spicy Kicks")),
       body: ListView.builder(
         itemCount: spicyItems.length,
         itemBuilder: (context, index) {
