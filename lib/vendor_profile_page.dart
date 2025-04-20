@@ -84,14 +84,14 @@ class VendorProfilePage extends StatelessWidget {
                     children: [
                       Expanded(
                         child: LinearProgressIndicator(
-                          value: hygieneScore / 5,
+                          value: hygieneScore / 10,
                           backgroundColor: Colors.grey[300],
                           color: _getScoreColor(hygieneScore),
                           minHeight: 10,
                         ),
                       ),
                       SizedBox(width: 10),
-                      Text("${hygieneScore.toStringAsFixed(1)}/5", style: TextStyle(fontWeight: FontWeight.bold)),
+                      Text("${hygieneScore.toStringAsFixed(1)}/10", style: TextStyle(fontWeight: FontWeight.bold)),
                     ],
                   ),
 

@@ -45,6 +45,7 @@ class _CommunityFeedbackIntegrationState extends State<CommunityFeedbackIntegrat
         ),
       ),
       child: Scaffold(
+        backgroundColor: Color(0xFFFFC107),
         appBar: AppBar(
           title: const Text("Community Feedback"),
           backgroundColor: goldenYellow,
@@ -55,17 +56,20 @@ class _CommunityFeedbackIntegrationState extends State<CommunityFeedbackIntegrat
             Padding(
               padding: const EdgeInsets.all(12),
               child: TextField(
-                onChanged: (value) => setState(() => searchQuery = value.toLowerCase()),
-                decoration: InputDecoration(
-                  hintText: 'Search by vendor or location',
-                  prefixIcon: const Icon(Icons.search),
-                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: goldenYellow, width: 2),
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                ),
-              ),
+  onChanged: (value) => setState(() => searchQuery = value.toLowerCase()),
+  decoration: InputDecoration(
+    hintText: 'Search by vendor or location',
+    prefixIcon: const Icon(Icons.search),
+    filled: true,
+    fillColor: Colors.white, // Set background color here
+    border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
+    focusedBorder: OutlineInputBorder(
+      borderSide: BorderSide(color: goldenYellow, width: 2),
+      borderRadius: BorderRadius.circular(12),
+    ),
+  ),
+),
+
             ),
             Expanded(
               child: StreamBuilder<QuerySnapshot>(

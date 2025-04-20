@@ -49,7 +49,7 @@ class _FlavorPassportProfileState extends State<FlavorPassportProfile> {
           final user = snapshot.data!;
           print(user);
           final name = user['name'];
-          final location = user['location'] ?? 'Unknown';
+          final location = user['location'] ?? 'Thane';
           final personality = user['personality'] ?? 'Spice Master';
           final imageUrl = user['imageUrl'] ?? 'https://i.pravatar.cc/150?img=23';
           final isSpicy = user['spicy'] == 1;

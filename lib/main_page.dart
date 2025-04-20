@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:street_food_app/blogs_and_videos_page.dart';
 import 'package:street_food_app/community_feedback_integration.dart';
 import 'package:street_food_app/flavour_passport_profile.dart';
 import 'package:street_food_app/food_category_card.dart';
 import 'package:street_food_app/food_place_screen.dart';
+import 'package:street_food_app/fusion_page.dart';
 import 'package:street_food_app/optimized_route_map.dart';
+import 'package:street_food_app/savoury_page.dart';
+import 'package:street_food_app/spicy_page.dart';
+import 'package:street_food_app/sweet_page.dart';
 import 'package:street_food_app/vendor_hygiene_dashboard.dart';
 import 'package:street_food_app/vendor_sign_up_page.dart';
 
@@ -87,7 +92,7 @@ class HomePage extends StatelessWidget {
                         const SizedBox(height: 5),
                         const Text(
                           "Ready to taste Mumbai?",
-                          style: TextStyle(fontSize: 18, color: Colors.black87),
+                          style: TextStyle(fontFamily: "PlayfairDisplay",fontSize: 18, color: Colors.black87, fontWeight: FontWeight.bold),
                         ),
                         const SizedBox(height: 20),
 
@@ -112,14 +117,47 @@ class HomePage extends StatelessWidget {
 
                         // Icons row
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: const [
-                            Icon(Icons.local_fire_department, size: 30),
-                            Icon(Icons.icecream, size: 30),
-                            Icon(Icons.spa, size: 30),
-                            Icon(Icons.ramen_dining, size: 30),
-                          ],
-                        ),
+  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+  children: [
+    InkWell(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => SpicyPage()),
+        );
+      },
+      child: const Icon(Icons.local_fire_department, size: 30),
+    ),
+    InkWell(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => SweetPage()),
+        );
+      },
+      child: const Icon(Icons.icecream, size: 30),
+    ),
+    InkWell(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => SavouryPage()),
+        );
+      },
+      child: const Icon(Icons.spa, size: 30),
+    ),
+    InkWell(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => FusionPage()),
+        );
+      },
+      child: const Icon(Icons.ramen_dining, size: 30),
+    ),
+  ],
+)
+
                       ],
                     ),
                   ),
@@ -223,6 +261,12 @@ class HomePage extends StatelessWidget {
                 icon: const Icon(Icons.add_circle_outline),
                 onPressed: () {
                   Navigator.push(context, MaterialPageRoute(builder: (_) => VendorSignUpPage()));
+                },
+              ),
+              IconButton(
+                icon: const Icon(Icons.camera),
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (_) => BlogsAndVideosPage()));
                 },
               ),
               IconButton(

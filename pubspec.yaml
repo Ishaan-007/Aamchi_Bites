@@ -51,6 +51,8 @@ dependencies:
   google_maps_flutter: ^2.12.1
   flutter_map: ^8.1.1
   latlong2: ^0.9.1
+  webview_flutter: ^4.11.0
+  url_launcher: ^6.3.1
 
 dev_dependencies:
   flutter_test:
@@ -117,6 +119,11 @@ flutter:
     - family: "PlaywriteAUSA"
       fonts:
         - asset: assets/fonts/PlaywriteAUSA-Regular.ttf
+
+    - family: "PlayfairDisplay"
+      fonts:
+        - asset: assets/fonts/PlayfairDisplay-Regular.ttf
+        
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package

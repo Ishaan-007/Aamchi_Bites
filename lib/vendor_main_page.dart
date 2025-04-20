@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:intl/intl.dart';
 
 class VendorHomePage extends StatefulWidget {
   final String vendorEmail;
@@ -11,6 +12,8 @@ class VendorHomePage extends StatefulWidget {
 
 class _VendorHomePageState extends State<VendorHomePage> {
   bool isOnline = true;
+  int? selectedRating;
+  final ScrollController _scrollController = ScrollController();
 
   Future<DocumentSnapshot?> fetchVendorData() async {
     final query = await FirebaseFirestore.instance
@@ -18,10 +21,41 @@ class _VendorHomePageState extends State<VendorHomePage> {
         .where('email', isEqualTo: widget.vendorEmail)
         .limit(1)
         .get();
-    if (query.docs.isNotEmpty) {
-      return query.docs.first;
+    return query.docs.isEmpty ? null : query.docs.first;
+  }
+
+  Stream<QuerySnapshot> fetchReviews(String vendorId) {
+    Query ref = FirebaseFirestore.instance
+        .collection('vendors')
+        .doc(vendorId)
+        .collection('reviews');
+
+    if (selectedRating != null) {
+      ref = ref.where('rating', isEqualTo: selectedRating);
     }
-    return null;
+
+    return ref.orderBy('timestamp', descending: true).snapshots();
+  }
+
+  String _formatTimestamp(String timestamp) {
+    try {
+      return DateFormat('dd MMM yyyy • HH:mm')
+          .format(DateTime.parse(timestamp));
+    } catch (e) {
+      return 'Invalid date';
+    }
+  }
+
+  Widget _buildRatingStars(int rating) {
+    return Row(
+      children: List.generate(5, (index) {
+        return Icon(
+          index < rating ? Icons.star : Icons.star_border,
+          color: Colors.amber,
+          size: 18,
+        );
+      }),
+    );
   }
 
   @override
@@ -39,162 +73,179 @@ class _VendorHomePageState extends State<VendorHomePage> {
           }
 
           final vendorData = snapshot.data!;
+          final vendorId = vendorData.id;
           final menuItems = List<Map<String, dynamic>>.from(vendorData['menu'] ?? []);
           final name = vendorData['name'] ?? 'Vendor';
-          final hygieneScore = vendorData['avg_hygiene_score'] != null? (vendorData['avg_hygiene_score'] as num).toStringAsFixed(2)
-          : '-';
-          final rating = vendorData['rating']?.toString() ?? '-';
+          final hygieneScore = (vendorData['avg_hygiene_score'] ?? 0).toDouble();
+          final rating = (vendorData['rating'] ?? 0).toDouble();
           final timings = vendorData['timings'] ?? '';
 
           return SafeArea(
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Top Bar & Info
+                // Header Section
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+                  padding: EdgeInsets.all(16),
                   child: Column(
                     children: [
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          // Greeting
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text('नमस्ते,',
-                                  style: TextStyle(
-                                    fontFamily: "TiroDevanagariHindi",
-                                    fontSize: 22,
-                                    color: Colors.white,
-                                  )),
-                              Text(name,
-                                  style: TextStyle(
-                                    fontSize: 26,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white,
-                                  )),
+                              Text(
+                                'नमस्ते,',
+                                style: TextStyle(
+                                  fontFamily: "TiroDevanagariHindi",
+                                  fontSize: 20,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              Text(
+                                name,
+                                style: TextStyle(
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                ),
+                              ),
                             ],
                           ),
-                          // Online toggle
                           Container(
                             padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                             decoration: BoxDecoration(
                               color: Colors.white,
-                              borderRadius: BorderRadius.circular(30),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.black.withOpacity(0.1),
-                                  blurRadius: 6,
-                                  offset: Offset(0, 2),
-                                )
-                              ],
-                            ),
+                              borderRadius: BorderRadius.circular(20),),
                             child: Row(
                               children: [
                                 Icon(
-                                  isOnline ? Icons.wifi : Icons.wifi_off,
+                                  isOnline ? Icons.check_circle : Icons.cancel,
                                   color: isOnline ? Colors.green : Colors.red,
-                                  size: 22,
-                                ),
-                                SizedBox(width: 5),
-                                Text(
-                                  isOnline ? 'Online' : 'Offline',
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    color: isOnline ? Colors.green : Colors.red,
-                                  ),
                                 ),
                                 Switch(
                                   value: isOnline,
-                                  onChanged: (value) {
-                                    setState(() => isOnline = value);
-                                  },
+                                  onChanged: (value) => setState(() => isOnline = value),
                                   activeColor: Colors.green,
                                 ),
                               ],
                             ),
-                          )
+                          ),
                         ],
                       ),
-                      SizedBox(height: 24),
-                      // Stat Cards
+                      SizedBox(height: 20),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          _buildStatCard('Hygiene', hygieneScore, Icons.clean_hands),
-                          _buildStatCard('Rating', rating, Icons.star_rounded),
-                          _buildStatCard('Timings', timings, Icons.schedule_rounded),
+                          _buildStatCard(
+                            'Hygiene',
+                            '${hygieneScore.toStringAsFixed(1)}/10',
+                            Icons.health_and_safety,
+                          ),
+                          _buildStatCard(
+                            'Rating',
+                            rating.toStringAsFixed(1),
+                            Icons.star,
+                          ),
+                          _buildStatCard(
+                            'Timings',
+                            timings,
+                            Icons.access_time,
+                          ),
                         ],
                       ),
                     ],
                   ),
                 ),
 
-                // Menu Section
+                // Content Section
                 Expanded(
                   child: Container(
-                    padding: EdgeInsets.all(20),
                     decoration: BoxDecoration(
                       color: Colors.white,
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(30),
-                        topRight: Radius.circular(30),
+                      borderRadius: BorderRadius.vertical(top: Radius.circular(30)),
+                    ),
+                    child: Padding(
+                      padding: EdgeInsets.all(16),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          // Menu Section
+                          Text('🍔 Menu', style: _sectionTitleStyle),
+                          SizedBox(height: 10),
+                          SizedBox(
+                            height: 120,
+                            child: ListView.builder(
+                              itemCount: menuItems.length,
+                              itemBuilder: (context, index) {
+                                final item = menuItems[index];
+                                return ListTile(
+                                  contentPadding: EdgeInsets.zero,
+                                  title: Text(item['name'], 
+                                      style: TextStyle(fontWeight: FontWeight.w500)),
+                                  trailing: Text('₹${item['price']}', 
+                                      style: TextStyle(color: Color(0xFFF2A43D))),
+                                );
+                              },
+                            ),
+                          ),
+                          
+                          // Reviews Filter
+                          Divider(thickness: 1),
+                          Padding(
+                            padding: EdgeInsets.symmetric(vertical: 8),
+                            child: Row(
+                              children: [
+                                Text('🔍 Filter Reviews:', style: _sectionTitleStyle),
+                                SizedBox(width: 10),
+                                DropdownButton<int>(
+                                  value: selectedRating,
+                                  hint: Text("All Ratings"),
+                                  dropdownColor: Colors.white,
+                                  onChanged: (val) => setState(() => selectedRating = val),
+                                  items: [
+                                    DropdownMenuItem(value: null, child: Text('All')),
+                                    ...List.generate(5, (i) => 
+                                      DropdownMenuItem(value: i+1, child: Text('${i+1} ★')))
+                                  ],
+                                ),
+                                if (selectedRating != null)
+                                  TextButton(
+                                    onPressed: () => setState(() => selectedRating = null),
+                                    child: Text('Clear', style: TextStyle(color: Colors.red)),
+                                  )
+                              ],
+                            ),
+                          ),
+
+                          // Reviews List
+                          Expanded(
+                            child: StreamBuilder<QuerySnapshot>(
+                              stream: fetchReviews(vendorId),
+                              builder: (context, snapshot) {
+                                if (snapshot.connectionState == ConnectionState.waiting) {
+                                  return Center(child: CircularProgressIndicator());
+                                }
+                                if (!snapshot.hasData || snapshot.data!.docs.isEmpty) {
+                                  return Center(child: Text("No reviews found"));
+                                }
+
+                                return ListView.builder(
+                                  controller: _scrollController,
+                                  itemCount: snapshot.data!.docs.length,
+                                  itemBuilder: (context, index) {
+                                    final review = snapshot.data!.docs[index].data() as Map<String, dynamic>;
+                                    return _buildReviewCard(review);
+                                  },
+                                );
+                              },
+                            ),
+                          ),
+                        ],
                       ),
                     ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text("Menu",
-                            style: TextStyle(
-                              fontSize: 22,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black87,
-                            )),
-                        SizedBox(height: 12),
-                        Expanded(
-                          child: ListView.separated(
-                            itemCount: menuItems.length,
-                            separatorBuilder: (_, __) => SizedBox(height: 12),
-                            itemBuilder: (context, index) {
-                              final item = menuItems[index];
-                              return Container(
-                                padding: EdgeInsets.symmetric(horizontal: 16, vertical: 14),
-                                decoration: BoxDecoration(
-                                  color: Colors.orange.shade50,
-                                  borderRadius: BorderRadius.circular(15),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.grey.withOpacity(0.1),
-                                      blurRadius: 4,
-                                      offset: Offset(0, 2),
-                                    )
-                                  ],
-                                ),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(item['name'],
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.w500,
-                                        )),
-                                    Text("₹${item['price']}",
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.bold,
-                                          color: Color(0xFFF2A43D),
-                                        )),
-                                  ],
-                                ),
-                              );
-                            },
-                          ),
-                        ),
-                      ],
-                    ),
                   ),
-                )
+                ),
               ],
             ),
           );
@@ -203,30 +254,93 @@ class _VendorHomePageState extends State<VendorHomePage> {
     );
   }
 
+  Widget _buildReviewCard(Map<String, dynamic> review) {
+    return Card(
+      margin: EdgeInsets.only(bottom: 12),
+      elevation: 2,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      child: Padding(
+        padding: EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(review['username'] ?? 'Anonymous', 
+                    style: TextStyle(fontWeight: FontWeight.bold)),
+                _buildRatingStars(review['rating'] ?? 0),
+              ],
+            ),
+            SizedBox(height: 8),
+            if (review['title'] != null)
+              Text(review['title'], 
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
+            if (review['description'] != null)
+              Padding(
+                padding: EdgeInsets.only(top: 8),
+                child: Text(review['description'], 
+                    style: TextStyle(color: Colors.grey[600])),
+              ),
+            SizedBox(height: 12),
+            Wrap(
+              spacing: 10,
+              runSpacing: 10,
+              children: [
+                _buildRatingChip('🧼 Cleanliness', review['cleanliness']),
+                _buildRatingChip('🥦 Ingredients', review['ingredient_quality']),
+                _buildRatingChip('💧 Water Safety', review['water_safety']),
+                if (review['recommend'] != null)
+                  Chip(
+                    avatar: Icon(review['recommend'] ? Icons.thumb_up : Icons.thumb_down,
+                        size: 18),
+                    label: Text(review['recommend'] ? 'Recommends' : "Doesn't recommend"),
+                    backgroundColor: review['recommend'] ? Colors.green[50] : Colors.red[50],
+                  ),
+              ],
+            ),
+            SizedBox(height: 8),
+            //Text(_formatTimestamp(review['timestamp'])),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildRatingChip(String label, dynamic value) {
+    return Chip(
+      avatar: Text(value?.toString() ?? '-', 
+          style: TextStyle(color: Color(0xFFF2A43D))),
+      label: Text(label),
+      backgroundColor: Colors.grey[100],
+    );
+  }
+
   Widget _buildStatCard(String title, String value, IconData icon) {
     return Container(
-      width: 110,
-      padding: EdgeInsets.symmetric(vertical: 16),
+      padding: EdgeInsets.all(12),
+      width: 100,
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(12),
         boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.08),
-            blurRadius: 8,
-            offset: Offset(0, 3),
-          ),
+          BoxShadow(color: Colors.black12, blurRadius: 4, offset: Offset(0, 2))
         ],
       ),
       child: Column(
         children: [
-          Icon(icon, size: 36, color: Color(0xFFF2A43D)),
-          SizedBox(height: 10),
-          Text(value, style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-          SizedBox(height: 4),
-          Text(title, style: TextStyle(fontSize: 13, color: Colors.grey[600])),
+          Icon(icon, color: Color(0xFFF2A43D), size: 28),
+          SizedBox(height: 6),
+          Text(value, style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+          Text(title, style: TextStyle(fontSize: 12, color: Colors.grey[600])),
         ],
       ),
     );
   }
+
+  TextStyle get _sectionTitleStyle => TextStyle(
+    fontSize: 20,
+    fontWeight: FontWeight.bold,
+    color: Colors.black87,
+  );
 }

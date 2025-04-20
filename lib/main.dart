@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:street_food_app/aamchi_bites_app.dart';
+import 'package:street_food_app/blogs_and_videos_page.dart';
 import 'package:street_food_app/chat_screen.dart';
 import 'package:street_food_app/community_feedback_integration.dart';
 import 'package:street_food_app/flavour_passport_profile.dart';

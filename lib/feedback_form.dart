@@ -128,23 +128,20 @@ class _FeedbackFormState extends State<FeedbackForm> {
     // Final hygiene score
     hygieneScore = ((cleanliness + ingredientScore + waterScore) / 3).toDouble();
 
-    // Reference to vendor document
     final vendorDocRef = FirebaseFirestore.instance.collection('vendors').doc(widget.vendorId);
 
-    // Firestore batch
     await FirebaseFirestore.instance.runTransaction((transaction) async {
-      // Get vendor doc
       final vendorSnapshot = await transaction.get(vendorDocRef);
 
-      // Get current average and review count
-      final currentAvg = vendorSnapshot.get('avg_hygiene_score') ?? 0.0;
+      final currentHygieneAvg = vendorSnapshot.get('avg_hygiene_score') ?? 0.0;
+      final currentRatingAvg = vendorSnapshot.get('rating') ?? 0.0;
       final currentCount = vendorSnapshot.get('recentReviewCount') ?? 0;
 
-      // New average calculation
       final newCount = currentCount + 1;
-      final newAvg = ((currentAvg * currentCount) + hygieneScore) / newCount;
 
-      // Add the review
+      final newHygieneAvg = ((currentHygieneAvg * currentCount) + hygieneScore) / newCount;
+      final newRatingAvg = ((currentRatingAvg * currentCount) + rating) / newCount;
+
       final reviewRef = vendorDocRef.collection('reviews').doc();
       transaction.set(reviewRef, {
         'username': username,
@@ -159,9 +156,9 @@ class _FeedbackFormState extends State<FeedbackForm> {
         'hygiene_score': hygieneScore,
       });
 
-      // Update avg_hygiene_score and review count
       transaction.update(vendorDocRef, {
-        'avg_hygiene_score': newAvg,
+        'avg_hygiene_score': newHygieneAvg,
+        'rating': newRatingAvg,
         'recentReviewCount': newCount,
       });
     });
@@ -169,6 +166,7 @@ class _FeedbackFormState extends State<FeedbackForm> {
     Navigator.pop(context);
   }
 }
+
 
 
               )
