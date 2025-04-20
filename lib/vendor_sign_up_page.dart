@@ -130,7 +130,7 @@ class _VendorSignUpPageState extends State<VendorSignUpPage> {
         );
         await _saveVendorData(cred.user!.uid);
       }
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => VendorHomePage()));
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => VendorHomePage(vendorEmail: _emailController.text.trim(),)));
     } catch (e) {
       setState(() => _response = '${_isLogin ? 'Login' : 'Signup'} error: $e');
     }
@@ -159,6 +159,8 @@ class _VendorSignUpPageState extends State<VendorSignUpPage> {
       'menu': menu,
       'rating': 0.0,
       'recentReviewCount': 0,
+      'status': 'orange',
+      'avg_hygiene_score': 0,
     };
 
     if (query.docs.isNotEmpty) {

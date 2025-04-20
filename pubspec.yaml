@@ -82,6 +82,7 @@ flutter:
     - assets/images/train.png
     - assets/images/title.png
     - assets/images/mumbai.png
+    - assets/images/food_1.png
     - assets/mumbai_vendors_50.json
     - assets/mumbai_vendors_50_updated.json
     - assets/user_profile.json

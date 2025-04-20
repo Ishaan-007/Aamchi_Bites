@@ -4,7 +4,8 @@ import 'package:street_food_app/flavour_passport_profile.dart';
 import 'package:street_food_app/food_category_card.dart';
 import 'package:street_food_app/food_place_screen.dart';
 import 'package:street_food_app/optimized_route_map.dart';
-import 'package:street_food_app/vendor_sign_up_page.dart';// Assuming this exists
+import 'package:street_food_app/vendor_hygiene_dashboard.dart';
+import 'package:street_food_app/vendor_sign_up_page.dart';
 
 class HomePage extends StatelessWidget {
   final String email;
@@ -131,7 +132,7 @@ class HomePage extends StatelessWidget {
   SizedBox(width: 12),
   FoodCategoryCard(title: "Specially for you", icon: Icons.lightbulb, route: FoodPlaceScreen(),),
   SizedBox(width: 12),
-  FoodCategoryCard(title: "Safe & Clean", icon: Icons.handshake, route: OSMOptimizedRouteMap(),),
+  FoodCategoryCard(title: "Safe & Clean", icon: Icons.handshake, route: VendorHygieneDashboard(),),
 ],
 
               ),
@@ -159,7 +160,7 @@ class HomePage extends StatelessWidget {
               physics: const NeverScrollableScrollPhysics(),
               padding: const EdgeInsets.symmetric(horizontal: 16),
               itemCount: 5,
-              itemBuilder: (context, index) => const VendorCard(),
+              itemBuilder: (context, index) => const VendorCard(imagePath: "assets/images/food_1.png"),
             ),
 
             const SizedBox(height: 80), // Leave space for bottom nav bar

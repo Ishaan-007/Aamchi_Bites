@@ -30,6 +30,12 @@ class VendorProfilePage extends StatelessWidget {
   final String vendorId;
   VendorProfilePage({required this.vendorId});
 
+  Color _getScoreColor(double score) {
+    if (score >= 4.0) return Colors.green;
+    if (score >= 2.0) return Colors.orange;
+    return Colors.red;
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -56,16 +62,43 @@ class VendorProfilePage extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(name, style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+                  Row(
+                    children: [
+                      Icon(Icons.store, size: 28),
+                      SizedBox(width: 8),
+                      Expanded(
+                        child: Text(
+                          name,
+                          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                    ],
+                  ),
                   SizedBox(height: 6),
                   Text("📍 $location\n📞 $contact\n🕘 $timings"),
+                  SizedBox(height: 10),
+                  
+                  Text("🧼 Hygiene Score", style: TextStyle(fontWeight: FontWeight.w600)),
                   SizedBox(height: 6),
-                  Text("🧼 Hygiene Score: ${hygieneScore.toStringAsFixed(1)}"),
-                  Divider(),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: LinearProgressIndicator(
+                          value: hygieneScore / 5,
+                          backgroundColor: Colors.grey[300],
+                          color: _getScoreColor(hygieneScore),
+                          minHeight: 10,
+                        ),
+                      ),
+                      SizedBox(width: 10),
+                      Text("${hygieneScore.toStringAsFixed(1)}/5", style: TextStyle(fontWeight: FontWeight.bold)),
+                    ],
+                  ),
 
+                  Divider(height: 30),
                   ReviewList(vendorId: vendorId),
-
                   Divider(),
+
                   Text("🍽 Menu & Best Sellers", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                   ...menu.map<Widget>((item) {
                     var itemName = item['name'] ?? 'Unnamed';
@@ -76,7 +109,7 @@ class VendorProfilePage extends StatelessWidget {
                       title: Text(itemName),
                       trailing: Text(itemPrice),
                     );
-                  }),
+                  }).toList(),
 
                   SizedBox(height: 20),
                   Center(
@@ -92,7 +125,7 @@ class VendorProfilePage extends StatelessWidget {
                         );
                       },
                     ),
-                  )
+                  ),
                 ],
               ),
             );
@@ -113,24 +146,34 @@ class ReviewList extends StatefulWidget {
 
 class _ReviewListState extends State<ReviewList> {
   int? filter;
+  // Store the user ID to track votes (in a real app, you'd get this from auth)
+  final String userId = 'current_user_id';
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        DropdownButton<int?>(
-          hint: Text("🔍 Filter by Star Rating"),
-          value: filter,
-          onChanged: (val) => setState(() => filter = val),
-          items: [
-            DropdownMenuItem(child: Text("All"), value: null),
-            ...List.generate(5, (i) => DropdownMenuItem(
-              child: Text("${i + 1} Stars"),
-              value: i + 1,
-            )),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text("📣 User Reviews", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+            DropdownButton<int?>(
+              hint: Text("🔍 Filter"),
+              value: filter,
+              isDense: true,
+              onChanged: (val) => setState(() => filter = val),
+              items: [
+                DropdownMenuItem(child: Text("All"), value: null),
+                ...List.generate(5, (i) => DropdownMenuItem(
+                  child: Text("${i + 1} Stars"),
+                  value: i + 1,
+                )),
+              ],
+            ),
           ],
         ),
+        SizedBox(height: 8),
         StreamBuilder<QuerySnapshot>(
           stream: FirebaseFirestore.instance
               .collection('vendors')
@@ -139,7 +182,7 @@ class _ReviewListState extends State<ReviewList> {
               .orderBy('timestamp', descending: true)
               .snapshots(),
           builder: (context, snapshot) {
-            if (!snapshot.hasData) return CircularProgressIndicator();
+            if (!snapshot.hasData) return Center(child: CircularProgressIndicator());
 
             var reviews = snapshot.data!.docs;
             if (filter != null) {
@@ -154,14 +197,82 @@ class _ReviewListState extends State<ReviewList> {
             }
 
             return Column(
-              children: reviews.map((r) {
+              children: reviews.map((reviewDoc) {
+                var review = reviewDoc.data() as Map<String, dynamic>;
+                var reviewId = reviewDoc.id;
+                
+                // Extract voting data or set defaults
+                var upvotes = review['upvotes'] ?? 0;
+                var downvotes = review['downvotes'] ?? 0;
+                var voteScore = upvotes - downvotes;
+                
+                // Check if user has already voted
+                var userVotes = review['userVotes'] as Map<String, dynamic>? ?? {};
+                int userVote = userVotes[userId] ?? 0; // 1 for upvote, -1 for downvote, 0 for no vote
+                
                 return Card(
                   margin: EdgeInsets.symmetric(vertical: 6),
                   elevation: 3,
-                  child: ListTile(
-                    title: Text("${r['title']} (${r['rating']}⭐)"),
-                    subtitle: Text(r['description']),
-                    trailing: Text("by ${r['username']}"),
+                  child: Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Expanded(
+                              child: Text(
+                                "${review['title'] ?? 'Review'} (${review['rating']}⭐)",
+                                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                              ),
+                            ),
+                            Text(
+                              "by ${review['username'] ?? 'Anonymous'}",
+                              style: TextStyle(fontStyle: FontStyle.italic, fontSize: 12),
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 8),
+                        Text(review['description'] ?? ''),
+                        SizedBox(height: 8),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              children: [
+                                _buildVoteButton(
+                                  icon: Icons.thumb_up,
+                                  color: userVote == 1 ? Colors.green : Colors.grey,
+                                  onPressed: () => _handleVote(reviewId, 1, userVote),
+                                ),
+                                SizedBox(width: 4),
+                                _buildVoteButton(
+                                  icon: Icons.thumb_down,
+                                  color: userVote == -1 ? Colors.red : Colors.grey,
+                                  onPressed: () => _handleVote(reviewId, -1, userVote),
+                                ),
+                                SizedBox(width: 12),
+                                Text(
+                                  "$voteScore",
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: voteScore > 0 
+                                      ? Colors.green 
+                                      : voteScore < 0 ? Colors.red : Colors.grey,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            if (review['timestamp'] != null)
+                              Text(
+                                _formatDate(review['timestamp'].toDate()),
+                                style: TextStyle(fontSize: 12, color: Colors.grey),
+                              ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 );
               }).toList(),
@@ -170,5 +281,70 @@ class _ReviewListState extends State<ReviewList> {
         ),
       ],
     );
+  }
+
+  Widget _buildVoteButton({
+    required IconData icon,
+    required Color color,
+    required VoidCallback onPressed,
+  }) {
+    return InkWell(
+      onTap: onPressed,
+      child: Container(
+        padding: EdgeInsets.all(4),
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          color: Colors.grey[200],
+        ),
+        child: Icon(icon, size: 16, color: color),
+      ),
+    );
+  }
+
+  void _handleVote(String reviewId, int vote, int currentUserVote) async {
+    // Reference to the review document
+    DocumentReference reviewRef = FirebaseFirestore.instance
+        .collection('vendors')
+        .doc(widget.vendorId)
+        .collection('reviews')
+        .doc(reviewId);
+
+    // Get the current review data
+    DocumentSnapshot reviewDoc = await reviewRef.get();
+    var reviewData = reviewDoc.data() as Map<String, dynamic>;
+    
+    // Initialize vote counts if they don't exist
+    var upvotes = reviewData['upvotes'] ?? 0;
+    var downvotes = reviewData['downvotes'] ?? 0;
+    var userVotes = reviewData['userVotes'] as Map<String, dynamic>? ?? {};
+
+    // Handle different vote scenarios
+    if (currentUserVote == vote) {
+      // User is toggling their vote off
+      if (vote == 1) upvotes--;
+      if (vote == -1) downvotes--;
+      userVotes[userId] = 0;
+    } else {
+      // Remove previous vote if exists
+      if (currentUserVote == 1) upvotes--;
+      if (currentUserVote == -1) downvotes--;
+      
+      // Add new vote
+      if (vote == 1) upvotes++;
+      if (vote == -1) downvotes++;
+      
+      userVotes[userId] = vote;
+    }
+
+    // Update the document
+    await reviewRef.update({
+      'upvotes': upvotes,
+      'downvotes': downvotes,
+      'userVotes': userVotes,
+    });
+  }
+
+  String _formatDate(DateTime date) {
+    return "${date.day}/${date.month}/${date.year}";
   }
 }

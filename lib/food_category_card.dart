@@ -52,25 +52,81 @@ class FoodCategoryCard extends StatelessWidget {
 }
 
 class VendorCard extends StatelessWidget {
-  const VendorCard({super.key});
+  final String imagePath; // Asset or network image path
+  final String vendorName;
+  final String vendorSubtitle;
+  final double rating;
+
+  const VendorCard({
+    super.key,
+    required this.imagePath,
+    this.vendorName = "5-Star Vada Pav Stall",
+    this.vendorSubtitle = "Near CST Station - Clean, Tasty, Legendary",
+    this.rating = 5.0,
+  });
+
+  bool _isNetworkImage(String path) {
+    return path.startsWith('http://') || path.startsWith('https://');
+  }
 
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: const EdgeInsets.only(bottom: 12),
+      elevation: 5,
+      margin: const EdgeInsets.only(bottom: 16),
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
+        borderRadius: BorderRadius.circular(20),
       ),
-      child: ListTile(
-        leading: CircleAvatar(
-          backgroundImage: NetworkImage(
-            'https://i.pravatar.cc/150?img=${(10 + DateTime.now().second) % 70}',
+      clipBehavior: Clip.antiAlias,
+      child: Column(
+        children: [
+          // Beautiful image banner
+          SizedBox(
+            height: 180,
+            width: double.infinity,
+            child: _isNetworkImage(imagePath)
+                ? Image.network(imagePath, fit: BoxFit.cover)
+                : Image.asset(imagePath, fit: BoxFit.cover),
           ),
-          radius: 50,
-        ),
-        title: const Text("5-Star Vada Pav Stall"),
-        subtitle: const Text("Near CST Station - Clean, Tasty, Legendary"),
-        trailing: const Icon(Icons.star, color: Colors.amber),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+            child: Row(
+              children: [
+                Icon(Icons.storefront_rounded, size: 30, color: Colors.amber[800]),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        vendorName,
+                        style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                      ),
+                      const SizedBox(height: 4),
+                      Text(
+                        vendorSubtitle,
+                        style: const TextStyle(color: Colors.black54),
+                      ),
+                    ],
+                  ),
+                ),
+                Row(
+                  children: [
+                    Icon(Icons.star, color: Colors.amber[700]),
+                    const SizedBox(width: 4),
+                    Text(
+                      rating.toStringAsFixed(1),
+                      style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                      ),
+                    )
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }

@@ -86,21 +86,34 @@ class _OSMOptimizedRouteMapState extends State<OSMOptimizedRouteMap> {
       .asMap()
       .entries
       .map((entry) => Marker(
-            width: 80.0,
+            width: 120.0,
             height: 60.0,
             point: entry.value,
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Icon(Icons.location_pin, color: Colors.red, size: 30),
-                Text(
-                  vendorNames[entry.key],
-                  style: TextStyle(fontSize: 12, color: Colors.black),
+                Container(
+                  width: 100,
+                  padding: EdgeInsets.symmetric(horizontal: 4),
+                  child: Text(
+                    vendorNames[entry.key],
+                    style: TextStyle(
+                      fontSize: 10,
+                      color: Colors.black,
+                      fontWeight: FontWeight.w600,
+                    ),
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    textAlign: TextAlign.center,
+                  ),
                 ),
               ],
             ),
           ))
       .toList(),
 ),
+
 
         ],
       ),

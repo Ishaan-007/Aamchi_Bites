@@ -88,44 +88,89 @@ class _FeedbackFormState extends State<FeedbackForm> {
                 onChanged: (v) => setState(() => waterSafety = v!),
                 decoration: InputDecoration(labelText: "Water Safety"),
               ),
-              TextFormField(
-                decoration: InputDecoration(labelText: "Hygiene Score (0-10)"),
-                keyboardType: TextInputType.numberWithOptions(decimal: true),
-                initialValue: hygieneScore.toString(),
-                validator: (v) {
-                  final val = double.tryParse(v!);
-                  if (val == null || val < 0 || val > 10) return "Enter a score between 0 and 10";
-                  return null;
-                },
-                onSaved: (v) => hygieneScore = double.parse(v!),
-              ),
+              // TextFormField(
+              //   decoration: InputDecoration(labelText: "Hygiene Score (0-10)"),
+              //   keyboardType: TextInputType.numberWithOptions(decimal: true),
+              //   initialValue: hygieneScore.toString(),
+              //   validator: (v) {
+              //     final val = double.tryParse(v!);
+              //     if (val == null || val < 0 || val > 10) return "Enter a score between 0 and 10";
+              //     return null;
+              //   },
+              //   onSaved: (v) => hygieneScore = double.parse(v!),
+              // ),
               SizedBox(height: 20),
               ElevatedButton(
                 child: Text("Submit Review"),
                 onPressed: () async {
-                  if (_formKey.currentState!.validate()) {
-                    _formKey.currentState!.save();
+  if (_formKey.currentState!.validate()) {
+    _formKey.currentState!.save();
 
-                    await FirebaseFirestore.instance
-                        .collection('vendors')
-                        .doc(widget.vendorId)
-                        .collection('reviews')
-                        .add({
-                      'username': username,
-                      'title': title,
-                      'description': description,
-                      'rating': rating,
-                      'recommend': recommend,
-                      'timestamp': Timestamp.now(),
-                      'cleanliness': cleanliness,
-                      'ingredient_quality': ingredientQuality,
-                      'water_safety': waterSafety,
-                      'hygiene_score': hygieneScore,
-                    });
+    // Ingredient score
+    int ingredientScore;
+    switch (ingredientQuality) {
+      case 'Fresh':
+        ingredientScore = 10;
+        break;
+      case 'Frozen':
+        ingredientScore = 6;
+        break;
+      case 'Stale':
+        ingredientScore = 2;
+        break;
+      default:
+        ingredientScore = 0;
+    }
 
-                    Navigator.pop(context);
-                  }
-                },
+    // Water safety score
+    int waterScore = (waterSafety == 'Safe') ? 10 : 3;
+
+    // Final hygiene score
+    hygieneScore = ((cleanliness + ingredientScore + waterScore) / 3).toDouble();
+
+    // Reference to vendor document
+    final vendorDocRef = FirebaseFirestore.instance.collection('vendors').doc(widget.vendorId);
+
+    // Firestore batch
+    await FirebaseFirestore.instance.runTransaction((transaction) async {
+      // Get vendor doc
+      final vendorSnapshot = await transaction.get(vendorDocRef);
+
+      // Get current average and review count
+      final currentAvg = vendorSnapshot.get('avg_hygiene_score') ?? 0.0;
+      final currentCount = vendorSnapshot.get('recentReviewCount') ?? 0;
+
+      // New average calculation
+      final newCount = currentCount + 1;
+      final newAvg = ((currentAvg * currentCount) + hygieneScore) / newCount;
+
+      // Add the review
+      final reviewRef = vendorDocRef.collection('reviews').doc();
+      transaction.set(reviewRef, {
+        'username': username,
+        'title': title,
+        'description': description,
+        'rating': rating,
+        'recommend': recommend,
+        'timestamp': Timestamp.now(),
+        'cleanliness': cleanliness,
+        'ingredient_quality': ingredientQuality,
+        'water_safety': waterSafety,
+        'hygiene_score': hygieneScore,
+      });
+
+      // Update avg_hygiene_score and review count
+      transaction.update(vendorDocRef, {
+        'avg_hygiene_score': newAvg,
+        'recentReviewCount': newCount,
+      });
+    });
+
+    Navigator.pop(context);
+  }
+}
+
+
               )
             ],
           ),
